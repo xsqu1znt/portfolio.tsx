@@ -1,15 +1,15 @@
-import { Button } from "./ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import Link from "next/link";
 
 interface ProjectProps {
     title: string;
     description: string;
     tech: string[];
-    client: boolean;
+    projectType: string;
     links: {
-        demo: string;
-        site: string;
-        github: string;
+        demo?: string;
+        site?: string;
+        github?: string;
     } | null;
 }
 
@@ -30,27 +30,23 @@ export default function ProjectCard({ project }: { project: ProjectProps }) {
                 </div>
 
                 <div className="flex justify-between gap-4 text-sm mt-6">
-                    {project.client ? (
-                        <span className="text-yellow-400 italic">Client Work</span>
-                    ) : (
-                        <span className="text-green-400 italic">Public</span>
-                    )}
+                    <span className="text-zinc-600 font-bold italic">{project.projectType}</span>
 
                     <div className="space-x-4">
                         {project.links?.demo && (
-                            <a href={project.links.demo} target="_blank" className="text-blue-400 hover:underline">
+                            <Link href={project.links.demo} target="_blank" className="text-violet-400 hover:underline">
                                 Live Demo
-                            </a>
+                            </Link>
                         )}
                         {project.links?.site && (
-                            <a href={project.links.site} target="_blank" className="text-blue-400 hover:underline">
+                            <Link href={project.links.site} target="_blank" className="text-violet-400 hover:underline">
                                 Website
-                            </a>
+                            </Link>
                         )}
                         {project.links?.github && (
-                            <a href={project.links.github} target="_blank" className="text-blue-400 hover:underline">
+                            <Link href={project.links.github} target="_blank" className="text-violet-400 hover:underline">
                                 GitHub
-                            </a>
+                            </Link>
                         )}
                     </div>
                 </div>

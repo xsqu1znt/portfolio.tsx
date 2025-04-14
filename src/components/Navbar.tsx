@@ -3,7 +3,7 @@ export function Navbar() {
         <nav className="flex justify-between px-6 py-4 border-b-[1px] border-white/10">
             <p className="text-lg">Gunique G.</p>
 
-            <div>
+            <div className="hidden lg:block">
                 <ul>
                     <li className="space-x-6">
                         <a href="#" className="text-lg">
