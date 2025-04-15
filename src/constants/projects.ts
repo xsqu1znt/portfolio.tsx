@@ -8,17 +8,6 @@ export default [
         links: null
     },
     {
-        title: "Dashboard Demo Clone",
-        description:
-            "A recreated control panel demo, modeled after a client dashboard. Includes user auth, logs view, and role permissions.",
-        tech: ["Next.js", "TailwindCSS", "Supabase"],
-        projectType: "Clone of Client Work",
-        links: {
-            demo: "https://your-demo-link.com",
-            github: "https://github.com/your-github/dashboard-clone"
-        }
-    },
-    {
         title: "Anime Watchlist Tracker",
         description: "A side project to track watched anime with ratings and comments. Integrated with Kitsu API.",
         tech: ["React", "TypeScript", "Tailwind"],
@@ -27,5 +16,16 @@ export default [
             site: "https://your-demo.com",
             github: "https://github.com/your-github/anime-tracker"
         }
-    }
+    },
+    {
+        title: "Portfolio",
+        description:
+            "Huh, that's the very page you're looking at! Built with ❤️ and care.",
+        tech: ["Next.js", "TailwindCSS", "Shadcn", "Aceternity", "Framer Motion"],
+        projectType: "Personal",
+        links: {
+            site: "/",
+            github: "https://github.com/xsqu1znt/portfolio.tsx"
+        }
+    },
 ];

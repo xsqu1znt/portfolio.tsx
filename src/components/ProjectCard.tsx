@@ -21,7 +21,7 @@ export default function ProjectCard({ project }: { project: ProjectProps }) {
                 <CardDescription>{project.description}</CardDescription>
             </CardHeader>
             <CardContent>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, i) => (
                         <span key={i} className="bg-zinc-800 text-xs px-2 py-1 rounded">
                             {tech}

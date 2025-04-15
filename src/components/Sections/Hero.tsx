@@ -1,21 +1,26 @@
 import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
     return (
-        <section className="flex flex-col items-center justify-center px-6 py-12 space-y-12">
-            <div className="flex flex-col items-center mt-12 space-y-6">
-                <h1 className="text-6xl font-bold">Hi, I'm Gunique.</h1>
-                <p className="text-lg text-zinc-400">I build fast, scalable web apps and custom Discord bots. 🔥</p>
-            </div>
+        <section id="home" className="flex flex-col justify-center gap-12 px-6 py-12">
+            <div className="flex flex-col gap-12 my-24 ml-24">
+                <div className="flex flex-col gap-6">
+                    <h1 className="text-6xl font-bold">Hi, I'm Gunique.</h1>
+                    <p className="text-lg text-zinc-400">I build fast, scalable web apps and custom Discord bots. 🔥</p>
+                </div>
 
-            <div className="space-x-6">
-                <Button asChild className="cursor-pointer">
-                    <Link href="/projects">View Projects</Link>
-                </Button>
-                <Button asChild className="cursor-pointer">
-                    <Link href="/about">About Me</Link>
-                </Button>
+                <div className="flex flex-row items-center gap-6">
+                    <Button asChild className="cursor-pointer">
+                        <Link href="/resume">
+                            <Download /> My Resume
+                        </Link>
+                    </Button>
+                    <Button asChild className="cursor-pointer" variant={"outline"}>
+                        <Link href="/projects">View Projects</Link>
+                    </Button>
+                </div>
             </div>
         </section>
     );
