@@ -15,12 +15,12 @@ interface ProjectProps {
 
 export default function ProjectCard({ project }: { project: ProjectProps }) {
     return (
-        <Card className="w-[350px]">
+        <Card className="aspect-square">
             <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="flex flex-col">
                 <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, i) => (
                         <span key={i} className="bg-zinc-800 text-xs px-2 py-1 rounded">
