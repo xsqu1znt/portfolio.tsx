@@ -14,7 +14,17 @@ export default function Projects() {
             <h2 className="text-3xl font-bold">🏆 Top Projects</h2>
 
             <div className="flex flex-row flex-wrap justify-center gap-6">
-                {projects.map((project, i) => (
+                {projects.web.map((project, i) => (
+                    <ProjectCard key={i} project={project} />
+                ))}
+            </div>
+            <div className="flex flex-row flex-wrap justify-center gap-6">
+                {projects.discord.map((project, i) => (
+                    <ProjectCard key={i} project={project} />
+                ))}
+            </div>
+            <div className="flex flex-row flex-wrap justify-center gap-6">
+                {projects.modules.map((project, i) => (
                     <ProjectCard key={i} project={project} />
                 ))}
             </div>

@@ -4,6 +4,7 @@ import Link from "next/link";
 interface ProjectProps {
     title: string;
     description: string;
+    subText?: string;
     tech: string[];
     projectType: string;
     links: {
@@ -19,6 +20,7 @@ export default function ProjectCard({ project }: { project: ProjectProps }) {
             <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
+                {project.subText && <CardDescription className="text-zinc-600 italic">{">"} {project.subText}</CardDescription>}
             </CardHeader>
             <CardContent className="flex flex-col">
                 <div className="flex flex-wrap gap-2">
@@ -39,33 +41,21 @@ export default function ProjectCard({ project }: { project: ProjectProps }) {
                 <ul className="text-sm flex flex-row gap-4">
                     {project.links?.demo && (
                         <li>
-                            <Link
-                                href={project.links.demo}
-                                target="_blank"
-                                className="link-accent-primary"
-                            >
+                            <Link href={project.links.demo} target="_blank" className="link-accent-primary">
                                 Live Demo
                             </Link>
                         </li>
                     )}
                     {project.links?.site && (
                         <li>
-                            <Link
-                                href={project.links.site}
-                                target="_blank"
-                                className="link-accent-primary"
-                            >
+                            <Link href={project.links.site} target="_blank" className="link-accent-primary">
                                 Website
                             </Link>
                         </li>
                     )}
                     {project.links?.github && (
                         <li>
-                            <Link
-                                href={project.links.github}
-                                target="_blank"
-                                className="link-accent-primary"
-                            >
+                            <Link href={project.links.github} target="_blank" className="link-accent-primary">
                                 GitHub
                             </Link>
                         </li>
