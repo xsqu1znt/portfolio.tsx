@@ -1,8 +1,8 @@
 export default [
     {
         title: "Portfolio",
-        description: "Huh, that's the very page you're looking at! Built with ❤️ and care.",
-        tech: ["Next.js", "TailwindCSS", "Shadcn", "Aceternity", "Framer Motion"],
+        description: "Huh, this is the very page you're looking at! Built with ❤️ and care.",
+        tech: ["Next.js", "TailwindCSS", "Shadcn"],
         projectType: "Personal",
         links: {
             site: "/",

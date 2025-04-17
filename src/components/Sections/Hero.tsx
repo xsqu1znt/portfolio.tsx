@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function Hero() {
     return (
-        <section id="home" className="flex flex-col justify-center items-center gap-72 px-6 py-12">
-            <div className="flex flex-col items-center gap-12 my-24">
+        <section id="home" className="section mt-24">
+            <div className="flex flex-col items-center gap-12">
                 <div className="flex flex-col items-center gap-6">
                     <h1 className="text-6xl font-bold">Hi, I'm Gunique.</h1>
                     <p className="text-lg text-zinc-400">
@@ -27,6 +27,8 @@ export default function Hero() {
                     </Button>
                 </div>
             </div>
+
+            <hr className="border-zinc-800 w-md mt-12" />
         </section>
     );
 }

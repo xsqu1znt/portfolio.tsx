@@ -10,22 +10,14 @@ export default function Projects() {
     const plugin = React.useRef(Autoplay({ delay: 5000 }));
 
     return (
-        <section id="projects" className="flex flex-col items-center gap-12 justify-center px-6 py-12">
+        <section id="projects" className="section">
             <h2 className="text-3xl font-bold">🏆 Top Projects</h2>
 
-            <Carousel className="w-full max-w-sm" opts={{ align: "start" }} plugins={[plugin.current]}>
-                <CarouselContent>
-                    {projects.map((project, i) => (
-                        <CarouselItem key={i} /* className="basis-1/3" */>
-                            <div className="p-1">
-                                <ProjectCard project={project} />
-                            </div>
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-            </Carousel>
+            <div className="flex flex-row flex-wrap justify-center gap-6">
+                {projects.map((project, i) => (
+                    <ProjectCard key={i} project={project} />
+                ))}
+            </div>
         </section>
     );
 }
