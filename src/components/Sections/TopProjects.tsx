@@ -1,33 +1,38 @@
-"use client";
-
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import ProjectCard from "@/components/ProjectCard";
-import Autoplay from "embla-carousel-autoplay";
 import projects from "@/constants/projects";
-import * as React from "react";
 
 export default function Projects() {
-    const plugin = React.useRef(Autoplay({ delay: 5000 }));
+    const topProjects = Object.entries(projects).map(([category, values]) => ({
+        category,
+        cards: (
+            <div className="flex flex-row flex-wrap justify-center gap-6">
+                {values.slice(0, 3).map((p, i) => (
+                    <ProjectCard key={i} project={p} />
+                ))}
+            </div>
+        )
+    }));
 
     return (
         <section id="projects" className="section">
             <h2 className="text-3xl font-bold">🏆 Top Projects</h2>
 
-            <div className="flex flex-row flex-wrap justify-center gap-6">
-                {projects.web.map((project, i) => (
-                    <ProjectCard key={i} project={project} />
+            <Tabs defaultValue={topProjects[0].category}>
+                <TabsList className="place-self-center mb-2">
+                    {topProjects.map((p, i) => (
+                        <TabsTrigger key={i} value={p.category} className="px-8 cursor-pointer">
+                            {p.category}
+                        </TabsTrigger>
+                    ))}
+                </TabsList>
+
+                {topProjects.map((cat, i) => (
+                    <TabsContent key={i} value={cat.category}>
+                        {cat.cards}
+                    </TabsContent>
                 ))}
-            </div>
-            <div className="flex flex-row flex-wrap justify-center gap-6">
-                {projects.discord.map((project, i) => (
-                    <ProjectCard key={i} project={project} />
-                ))}
-            </div>
-            <div className="flex flex-row flex-wrap justify-center gap-6">
-                {projects.modules.map((project, i) => (
-                    <ProjectCard key={i} project={project} />
-                ))}
-            </div>
+            </Tabs>
         </section>
     );
 }
