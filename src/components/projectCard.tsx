@@ -1,3 +1,4 @@
+import BubbleTag from "./ui/bubbleTag";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import Link from "next/link";
 
@@ -20,25 +21,24 @@ export default function ProjectCard({ project }: { project: ProjectProps }) {
             <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
-                {project.subText && <CardDescription className="text-zinc-600 italic">{">"} {project.subText}</CardDescription>}
+                {project.subText && (
+                    <CardDescription className="italic text-zinc-600">
+                        {">"} {project.subText}
+                    </CardDescription>
+                )}
             </CardHeader>
             <CardContent className="flex flex-col">
                 <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech, i) => (
-                        <span
-                            key={i}
-                            className="bg-white/5 border-white/10 hover:border-white/25 text-xs px-2 py-1 rounded-full border-[1px] select-none transition-colors duration-200"
-                        >
-                            {tech}
-                        </span>
+                        <BubbleTag key={i} size={"sm"}>{tech}</BubbleTag>
                     ))}
                 </div>
             </CardContent>
 
-            <CardFooter className="border-white/5 justify-between border-t">
-                <span className="text-zinc-600 text-sm font-bold italic select-none">{project.projectType}</span>
+            <CardFooter className="justify-between border-t border-white/5">
+                <span className="text-sm italic font-bold select-none text-zinc-600">{project.projectType}</span>
 
-                <ul className="text-sm flex flex-row gap-4">
+                <ul className="flex flex-row gap-4 text-sm">
                     {project.links?.demo && (
                         <li>
                             <Link href={project.links.demo} target="_blank" className="link-accent-primary">

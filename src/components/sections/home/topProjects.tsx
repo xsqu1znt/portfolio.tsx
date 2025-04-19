@@ -1,5 +1,5 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import ProjectCard from "@/components/ProjectCard";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
+import ProjectCard from "@/components/projectCard";
 import projects from "@/constants/projects";
 
 export default function Projects() {
@@ -19,7 +19,7 @@ export default function Projects() {
             <h2 className="text-3xl font-bold">🏆 Top Projects</h2>
 
             <Tabs defaultValue={topProjects[0].category}>
-                <TabsList className="place-self-center mb-2">
+                <TabsList className="mb-2 place-self-center">
                     {topProjects.map((p, i) => (
                         <TabsTrigger key={i} value={p.category} className="px-8 cursor-pointer">
                             {p.category}
