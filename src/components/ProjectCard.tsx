@@ -1,4 +1,4 @@
-import BubbleTag from "./ui/bubbleTag";
+import BubbleTag from "./BubbleTag";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import Link from "next/link";
 

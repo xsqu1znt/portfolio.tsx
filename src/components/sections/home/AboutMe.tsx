@@ -3,8 +3,9 @@ export default function AboutMe() {
         <section id="about" className="section">
             <h2 className="text-3xl font-bold">About Me</h2>
 
-            <div className="flex flex-col max-w-2xl gap-6 leading-relaxed text-zinc-400">
+            <div className="flex flex-col max-w-4xl gap-6 leading-relaxed text-zinc-400">
                 <p className="text-3xl font-semibold">👋 Hi, I'm Gunique.</p>
+
                 <p className="[&>span]:text-2xl [&>span]:font-semibold [&>span]:text-zinc-300 [&>span]:px-1">
                     I am a developer from the USA who takes his work seriously. I have <span>4+ years experience</span>{" "}
                     freelancing, building real-world web apps and custom Discord bots.

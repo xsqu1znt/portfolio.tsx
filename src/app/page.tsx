@@ -1,11 +1,11 @@
-import { Navbar } from "@/components/navbar";
+import { Navbar } from "@/components/Navbar";
 
-import Hero from "@/components/sections/home/hero";
-import Projects from "@/components/sections/home/topProjects";
-import AboutMe from "@/components/sections/home/aboutMe";
-import Skills from "@/components/sections/home/skills";
-import ContactMe from "@/components/sections/home/contactMe";
-import Footer from "@/components/footer";
+import Hero from "@/components/sections/home/Hero";
+import Projects from "@/components/sections/home/TopProjects";
+import AboutMe from "@/components/sections/home/AboutMe";
+import TechStack from "@/components/sections/home/TechStack";
+import ContactMe from "@/components/sections/home/ContactMe";
+import Footer from "@/components/Footer";
 
 export default function Home() {
     return (
@@ -15,7 +15,7 @@ export default function Home() {
                 <Hero />
                 <Projects />
                 <AboutMe />
-                <Skills />
+                <TechStack />
                 <ContactMe />
             </div>
             <Footer />
