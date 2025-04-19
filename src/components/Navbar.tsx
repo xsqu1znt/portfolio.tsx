@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function Navbar() {
     return (
-        <nav className="flex items-center justify-between px-8 py-4 border-b-[1px] border-white/10 sticky top-0 z-50 backdrop-blur-sm">
+        <nav className="flex items-center justify-between px-8 py-4 border-b-[1px] border-white/10 fixed top-0 w-full z-50 backdrop-blur-sm">
             <p className="text-lg">Gunique G.</p>
 
             {/* Mobile Menu */}
@@ -13,7 +13,7 @@ export function Navbar() {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center gap-6">
+            <div className="items-center hidden gap-6 lg:flex">
                 <ul>
                     <li className="flex items-center gap-6">
                         <Link href="#home" className="text-lg hover:underline">

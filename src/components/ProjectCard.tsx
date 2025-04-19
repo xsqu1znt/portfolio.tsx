@@ -17,7 +17,7 @@ interface ProjectProps {
 
 export default function ProjectCard({ project }: { project: ProjectProps }) {
     return (
-        <Card className="border-zinc-800 w-sm">
+        <Card className="border-zinc-800 w-xs md:w-sm">
             <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>

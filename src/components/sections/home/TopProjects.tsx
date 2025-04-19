@@ -6,7 +6,7 @@ export default function Projects() {
     const topProjects = Object.entries(projects).map(([category, values]) => ({
         category,
         cards: (
-            <div className="flex flex-row flex-wrap justify-center gap-6">
+            <div className="flex flex-wrap justify-center gap-6">
                 {values.slice(0, 3).map((p, i) => (
                     <ProjectCard key={i} project={p} />
                 ))}
@@ -15,7 +15,7 @@ export default function Projects() {
     }));
 
     return (
-        <section id="projects" className="section">
+        <section id="top" className="section">
             <h2 className="text-3xl font-bold">🏆 Top Projects</h2>
 
             <Tabs defaultValue={topProjects[0].category}>
@@ -26,6 +26,8 @@ export default function Projects() {
                         </TabsTrigger>
                     ))}
                 </TabsList>
+
+                <div className="mt-6" />
 
                 {topProjects.map((cat, i) => (
                     <TabsContent key={i} value={cat.category}>
