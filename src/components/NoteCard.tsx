@@ -1,9 +1,14 @@
 import { cn } from "@/lib/utils";
 
 interface Props {
-    className?: string;
     title: string;
     content: string[];
+
+    onClickYellow?: () => void;
+    onClickGreen?: () => void;
+    onClickRed?: () => void;
+
+    className?: string;
 }
 
 export default function NoteCard(props: Props) {
@@ -25,9 +30,18 @@ export default function NoteCard(props: Props) {
 
                 {/* Controls */}
                 <div className="flex gap-3">
-                    <div className="transition-colors duration-200 bg-yellow-400 rounded-full cursor-pointer hover:bg-yellow-600 size-4" />
-                    <div className="transition-colors duration-200 bg-green-400 rounded-full cursor-pointer hover:bg-green-700 size-4" />
-                    <div className="transition-colors duration-200 bg-red-400 rounded-full cursor-pointer hover:bg-red-500 size-4" />
+                    <div
+                        onClick={props.onClickYellow}
+                        className="transition-colors duration-200 bg-yellow-400 rounded-full cursor-pointer hover:bg-yellow-600 size-4"
+                    />
+                    <div
+                        onClick={props.onClickGreen}
+                        className="transition-colors duration-200 bg-green-400 rounded-full cursor-pointer hover:bg-green-700 size-4"
+                    />
+                    <div
+                        onClick={props.onClickRed}
+                        className="transition-colors duration-200 bg-red-400 rounded-full cursor-pointer hover:bg-red-500 size-4"
+                    />
                 </div>
             </div>
 

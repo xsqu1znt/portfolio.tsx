@@ -1,29 +1,43 @@
-import BubbleTag from "@/components/BubbleTag";
-import CardStack from "@/components/CardStack";
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
+import { motion } from "motion/react";
+import techNotes from "@/constants/techNotes";
 import NoteCard from "@/components/NoteCard";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+
+let flipInterval: any;
 
 export default function TechStack() {
-    const cards = [
-        <NoteCard
-            key={0}
-            title="proficient_in.md"
-            content={["Javascript / Typescript / HTML / CSS", "NodeJS / Discord.js / MongoDB / Mongoose"]}
-            className="w-fit lg:w-120"
-        />,
-        <NoteCard
-            key={1}
-            title="experienced_in.md"
-            content={["Next.js / React / Express.js "]}
-            className="w-fit lg:w-120"
-        />,
-        <NoteCard
-            key={2}
-            title="familiar_with.md"
-            content={["Python / SQL", "Docker / Electron / Amazon EC2"]}
-            className="w-fit lg:w-120"
-        />
-    ];
+    const rootRef = useRef(null);
+
+    const [cardOffsetY, setCardOffsetY] = useState(20);
+    const [cardScaleFactor, setCardScaleFactor] = useState(0.06);
+    const [notes, setNotes] = useState(techNotes);
+
+    const handleShow = (idx: number) => {
+        setNotes(prev => {
+            const newNotes = [...prev];
+            const temp = newNotes.splice(idx, 1);
+            newNotes.unshift(temp[0]);
+            return newNotes;
+        });
+    };
+
+    /* useEffect(() => {
+        flipCards();
+
+        return () => clearInterval(flipInterval);
+    }, []);
+
+    const flipCards = () => {
+        flipInterval = setInterval(() => {
+            setNotes((prevNotes: any) => {
+                const newArray = [...prevNotes]; // create a copy of the array
+                newArray.unshift(newArray.pop()!); // move the last element to the front
+                return newArray;
+            });
+        }, 1000);
+    }; */
 
     return (
         <section id="techstack" className="section">
@@ -32,54 +46,51 @@ export default function TechStack() {
                 <p className="text-zinc-500">The tech I'm expierenced in working with.</p>
             </div>
 
-            <div className="relative flex flex-col items-center">
-                <CardStack cards={cards} />
-                <span className="text-sm select-none mt-44 text-attention-gradient">you can swipe {">>"} to see more, btw</span>
+            <div ref={rootRef} className="relative mt-12 w-120 h-60">
+                {notes.map((note, i) => {
+                    return (
+                        <motion.div
+                            key={i}
+                            className="absolute flex flex-col justify-between w-120"
+                            style={{ transformOrigin: "top center" }}
+                            transition={{ duration: 0.3 }}
+                            initial={{
+                                top: -100 - i * -(cardOffsetY * 4),
+                                scale: 1,
+                                zIndex: notes.length - i,
+                                opacity: 0
+                            }}
+                            whileInView={{
+                                top: i * -cardOffsetY,
+                                left: (i * cardOffsetY) * 2,
+                                scale: 1 - i * cardScaleFactor,
+                                zIndex: notes.length - i,
+                                rotateZ: i * 3,
+                                opacity: 1 - (i / notes.length)
+                            }}
+                            whileHover={{
+                                top: i * -cardOffsetY - (i ? 50 : 0),
+                                zIndex: notes.length,
+                                scale: 1,
+                                opacity: 1,
+                                rotateZ: 0
+                            }}
+                            viewport={{ amount: "all", root: rootRef }}
+                        >
+                            <NoteCard
+                                key={i}
+                                title={note.title}
+                                content={note.content}
+                                onClickGreen={() => handleShow(i)}
+                                className="w-120 h-60"
+                            />
+                        </motion.div>
+                    );
+                })}
             </div>
 
-            {/* <div className="flex flex-col items-center gap-4">
-                <Carousel className="w-[300px] lg:w-[475px]">
-                    <CarouselContent>
-                        <CarouselItem>
-                            <div className="p-1">
-                                <NoteCard
-                                    title="proficient_in.md"
-                                    content={[
-                                        "Javascript / Typescript / HTML / CSS",
-                                        "NodeJS / Discord.js / MongoDB / Mongoose"
-                                    ]}
-                                    className="w-fit lg:w-[450px]"
-                                />
-                            </div>
-                        </CarouselItem>
-                        <CarouselItem>
-                            <div className="p-1">
-                                <NoteCard
-                                    title="experienced_in.md"
-                                    content={["Next.js / React / Express.js "]}
-                                    className="w-fit lg:w-[450px]"
-                                />
-                            </div>
-                        </CarouselItem>
-                        <CarouselItem>
-                            <div className="p-1">
-                                <NoteCard
-                                    title="familiar_with.md"
-                                    content={["Python / SQL", "Docker / Electron / Amazon EC2"]}
-                                    className="w-fit lg:w-[450px]"
-                                />
-                            </div>
-                        </CarouselItem>
-                    </CarouselContent>
-
-                    <CarouselPrevious className="not-md:hidden" />
-                    <CarouselNext className="not-md:hidden" />
-                </Carousel>
-
-                <span className="text-sm select-none text-attention-gradient">
-                    you can swipe {">>"} to see more, btw
-                </span>
-            </div> */}
+            <span className="text-sm select-none text-attention-gradient">check out the stack flow</span>
+            {/* <span className="text-sm select-none text-attention-gradient">you can swipe {">>"} to see more, btw</span> */}
         </section>
     );
 }
