@@ -1,5 +1,5 @@
 @import "tailwindcss";
 
 .section {
-    @apply flex flex-col items-center justify-center gap-12 px-6 py-12;
+    @apply flex flex-col items-center justify-center h-screen gap-12 px-6 py-12 snap-start;
 }

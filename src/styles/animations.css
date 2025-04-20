@@ -1,25 +1,21 @@
-.animate-text-gradient {
-    background: linear-gradient(to right, #006161 40%, #00ffff 50%, #006161 60%);
+.text-attention-gradient {
+    background: linear-gradient(to right, #004c48 40%, #00fff2 50%, #004c48 60%);
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     background-size: 200% 200%;
 
-    animation: animate-text-gradient 5s forwards infinite;
+    animation: animate-text-gradient 2.5s normal infinite;
 }
 
 @keyframes animate-text-gradient {
     0% {
         background-position: 200% 200%;
-        background-position: left center;
-    }
-    50% {
-        background-position: 200% 200%;
-        background-position: right center;
+        background-position: 125% center;
     }
     100% {
         background-position: 200% 200%;
-        background-position: left center;
+        background-position: -25% center;
     }
 }

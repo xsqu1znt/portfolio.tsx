@@ -1,8 +1,30 @@
 import BubbleTag from "@/components/BubbleTag";
+import CardStack from "@/components/CardStack";
 import NoteCard from "@/components/NoteCard";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 export default function TechStack() {
+    const cards = [
+        <NoteCard
+            key={0}
+            title="proficient_in.md"
+            content={["Javascript / Typescript / HTML / CSS", "NodeJS / Discord.js / MongoDB / Mongoose"]}
+            className="w-fit lg:w-120"
+        />,
+        <NoteCard
+            key={1}
+            title="experienced_in.md"
+            content={["Next.js / React / Express.js "]}
+            className="w-fit lg:w-120"
+        />,
+        <NoteCard
+            key={2}
+            title="familiar_with.md"
+            content={["Python / SQL", "Docker / Electron / Amazon EC2"]}
+            className="w-fit lg:w-120"
+        />
+    ];
+
     return (
         <section id="techstack" className="section">
             <div className="flex flex-col items-center gap-4 text-center">
@@ -10,7 +32,12 @@ export default function TechStack() {
                 <p className="text-zinc-500">The tech I'm expierenced in working with.</p>
             </div>
 
-            <div className="flex flex-col items-center gap-4">
+            <div className="relative flex flex-col items-center">
+                <CardStack cards={cards} />
+                <span className="text-sm select-none mt-44 text-attention-gradient">you can swipe {">>"} to see more, btw</span>
+            </div>
+
+            {/* <div className="flex flex-col items-center gap-4">
                 <Carousel className="w-[300px] lg:w-[475px]">
                     <CarouselContent>
                         <CarouselItem>
@@ -49,10 +76,10 @@ export default function TechStack() {
                     <CarouselNext className="not-md:hidden" />
                 </Carousel>
 
-                <span className="text-sm animate-text-gradient">
+                <span className="text-sm select-none text-attention-gradient">
                     you can swipe {">>"} to see more, btw
                 </span>
-            </div>
+            </div> */}
         </section>
     );
 }

@@ -24,7 +24,7 @@ export default function NoteCard(props: Props) {
                 <span className="font-mono text-zinc-400">{props.title}</span>
 
                 {/* Controls */}
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                     <div className="transition-colors duration-200 bg-yellow-400 rounded-full cursor-pointer hover:bg-yellow-600 size-4" />
                     <div className="transition-colors duration-200 bg-green-400 rounded-full cursor-pointer hover:bg-green-700 size-4" />
                     <div className="transition-colors duration-200 bg-red-400 rounded-full cursor-pointer hover:bg-red-500 size-4" />

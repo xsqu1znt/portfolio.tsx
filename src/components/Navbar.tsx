@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function Navbar() {
     return (
-        <nav className="flex items-center justify-between px-8 py-4 border-b-[1px] border-white/10 fixed top-0 w-full z-50 backdrop-blur-sm">
+        <nav className="fixed top-0 z-50 flex items-center justify-between w-full px-8 py-4">
             <p className="text-lg">Gunique G.</p>
 
             {/* Mobile Menu */}

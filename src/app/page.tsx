@@ -10,15 +10,15 @@ import Footer from "@/components/Footer";
 export default function Home() {
     return (
         <main className="overflow-x-hidden">
-            <Navbar />
-            <div>
+            <div className="w-full h-screen overflow-y-scroll snap-y snap-mandatory">
+                <Navbar />
                 <Hero />
                 <Projects />
                 <AboutMe />
                 <TechStack />
                 <ContactMe />
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </main>
     );
 }
