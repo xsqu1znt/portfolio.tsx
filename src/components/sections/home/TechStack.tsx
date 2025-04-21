@@ -1,43 +1,42 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import techNotes from "@/constants/techNotes";
 import NoteCard from "@/components/NoteCard";
 
-let flipInterval: any;
-
 export default function TechStack() {
     const rootRef = useRef(null);
+    const sizeStyle = "w-175 h-80";
 
-    const [cardOffsetY, setCardOffsetY] = useState(20);
+    const [mousePosition, setMousePosition] = useState({ x: 0, xNormalized: 0, y: 0, yNormalized: 0 });
+
+    const [cardOffset, setCardOffset] = useState({ x: 50, y: 25 });
     const [cardScaleFactor, setCardScaleFactor] = useState(0.06);
-    const [notes, setNotes] = useState(techNotes);
 
-    const handleShow = (idx: number) => {
-        setNotes(prev => {
-            const newNotes = [...prev];
-            const temp = newNotes.splice(idx, 1);
-            newNotes.unshift(temp[0]);
-            return newNotes;
-        });
-    };
+    const [notes, setNotes] = useState(techNotes.map((n, idx) => ({ index: idx, ...n })));
 
-    /* useEffect(() => {
-        flipCards();
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            setMousePosition({
+                x: e.clientX,
+                xNormalized: (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2),
+                y: e.clientY,
+                yNormalized: (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2)
+            });
+        };
 
-        return () => clearInterval(flipInterval);
+        window.addEventListener("mousemove", handleMouseMove);
+        return () => window.removeEventListener("mousemove", handleMouseMove);
     }, []);
 
-    const flipCards = () => {
-        flipInterval = setInterval(() => {
-            setNotes((prevNotes: any) => {
-                const newArray = [...prevNotes]; // create a copy of the array
-                newArray.unshift(newArray.pop()!); // move the last element to the front
-                return newArray;
-            });
-        }, 1000);
-    }; */
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setNotes(prev => prev.map(note => ({ ...note, index: (note.index + 1) % notes.length })));
+        }, 5_000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <section id="techstack" className="section">
@@ -46,50 +45,43 @@ export default function TechStack() {
                 <p className="text-zinc-500">The tech I'm expierenced in working with.</p>
             </div>
 
-            <div ref={rootRef} className="relative mt-12 w-120 h-60">
-                {notes.map((note, i) => {
+            <div ref={rootRef} className={`relative mt-6 ${sizeStyle}`}>
+                {notes.map((note, idx) => {
                     return (
                         <motion.div
-                            key={i}
-                            className="absolute flex flex-col justify-between w-120"
+                            key={idx}
+                            className={`absolute flex flex-col justify-between ${sizeStyle}`}
                             style={{ transformOrigin: "top center" }}
-                            transition={{ duration: 0.3 }}
+                            // transition={{ duration: 0.25 }}
                             initial={{
-                                top: -100 - i * -(cardOffsetY * 4),
-                                scale: 1,
-                                zIndex: notes.length - i,
                                 opacity: 0
                             }}
                             whileInView={{
-                                top: i * -cardOffsetY,
-                                left: (i * cardOffsetY) * 2,
-                                scale: 1 - i * cardScaleFactor,
-                                zIndex: notes.length - i,
-                                rotateZ: i * 3,
-                                opacity: 1 - (i / notes.length)
+                                top: note.index * -cardOffset.y * -mousePosition.yNormalized,
+                                left: note.index * -cardOffset.x * -mousePosition.xNormalized,
+                                scale: 1 - note.index * cardScaleFactor,
+                                zIndex: notes.length - note.index,
+                                opacity: 1 - note.index / (notes.length * 2)
                             }}
                             whileHover={{
-                                top: i * -cardOffsetY - (i ? 50 : 0),
-                                zIndex: notes.length,
-                                scale: 1,
-                                opacity: 1,
-                                rotateZ: 0
+                                scale: (1 - note.index * cardScaleFactor) * (!note.index ? 1.06 : 1)
                             }}
-                            viewport={{ amount: "all", root: rootRef }}
+                            viewport={{ amount: "all" }}
                         >
                             <NoteCard
-                                key={i}
+                                key={idx}
                                 title={note.title}
                                 content={note.content}
-                                onClickGreen={() => handleShow(i)}
-                                className="w-120 h-60"
+                                className={`${sizeStyle} ${
+                                    !note.index && "border-2 border-zinc-600 drop-shadow-lg"
+                                } transition-colors duration-1000`}
                             />
                         </motion.div>
                     );
                 })}
             </div>
 
-            <span className="text-sm select-none text-attention-gradient">check out the stack flow</span>
+            <span className="text-sm select-none text-attention-gradient">check out the stack {">>"} flow</span>
             {/* <span className="text-sm select-none text-attention-gradient">you can swipe {">>"} to see more, btw</span> */}
         </section>
     );

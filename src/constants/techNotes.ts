@@ -4,11 +4,11 @@ export default [
         content: ["Javascript / Typescript / HTML / CSS", "NodeJS / Discord.js / MongoDB / Mongoose"]
     },
     {
-        title: "experienced_in.md",
-        content: ["Next.js / React / Express.js "]
-    },
-    {
         title: "familiar_with.md",
         content: ["Python / SQL", "Docker / Electron / Amazon EC2"]
+    },
+    {
+        title: "experienced_in.md",
+        content: ["Next.js / React / Express.js "]
     }
 ];

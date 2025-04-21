@@ -16,7 +16,12 @@ export default function Projects() {
 
     return (
         <section id="top" className="section">
-            <h2 className="text-3xl font-bold">🏆 Top Projects</h2>
+            <div className="flex flex-col items-center gap-4 text-center">
+                <h2 className="text-3xl font-bold">
+                    🏆 <br /> Top Projects
+                </h2>
+                <p className="text-zinc-500">🚧 This section is under construction 🚧</p>
+            </div>
 
             <Tabs defaultValue={topProjects[0].category}>
                 <TabsList className="mb-2 place-self-center">

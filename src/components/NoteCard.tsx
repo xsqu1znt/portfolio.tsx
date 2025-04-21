@@ -22,7 +22,7 @@ export default function NoteCard(props: Props) {
     const charCount = fullContent.length;
 
     return (
-        <div className={cn("flex flex-col border rounded-xl border-zinc-800 bg-card drop-shadow-lg", props.className)}>
+        <div className={cn("flex flex-col border rounded-xl border-zinc-800 bg-card", props.className)}>
             {/* Titlebar */}
             <div className="flex items-center justify-between gap-4 px-4 py-2 border-b border-white/10">
                 {/* Title */}
@@ -32,15 +32,15 @@ export default function NoteCard(props: Props) {
                 <div className="flex gap-3">
                     <div
                         onClick={props.onClickYellow}
-                        className="transition-colors duration-200 bg-yellow-400 rounded-full cursor-pointer hover:bg-yellow-600 size-4"
+                        className="transition-colors duration-200 bg-yellow-400 rounded-full cursor-pointer hover:bg-yellow-600 size-4 animate-[pulse_1.5s_ease-in-out_infinite]"
                     />
                     <div
                         onClick={props.onClickGreen}
-                        className="transition-colors duration-200 bg-green-400 rounded-full cursor-pointer hover:bg-green-700 size-4"
+                        className="transition-colors duration-200 bg-green-400 rounded-full cursor-pointer hover:bg-green-700 size-4 animate-[pulse_2s_ease-in-out_infinite]"
                     />
                     <div
                         onClick={props.onClickRed}
-                        className="transition-colors duration-200 bg-red-400 rounded-full cursor-pointer hover:bg-red-500 size-4"
+                        className="transition-colors duration-200 bg-red-400 rounded-full cursor-pointer hover:bg-red-500 size-4 animate-[pulse_3s_ease-in-out_infinite]"
                     />
                 </div>
             </div>
