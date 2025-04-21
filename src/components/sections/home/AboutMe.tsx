@@ -1,6 +1,5 @@
 "use client";
 
-import BubbleTag from "@/components/BubbleTag";
 import { motion } from "motion/react";
 
 export default function AboutMe() {
@@ -12,33 +11,34 @@ export default function AboutMe() {
             </div> */}
 
             {/* Slideshow Container */}
-            <div className="w-full h-full overflow-y-scroll leading-relaxed snap-y snap-proximity no-scrollbar">
+            <div className="flex flex-row w-full max-h-screen overflow-x-scroll leading-relaxed not-lg:flex-1 lg:flex-col lg:overflow-y-scoll lg:snap-y snap-x snap-mandatory no-scrollbar">
                 {/* Slide */}
-                <div className="flex flex-col items-center justify-center w-full h-full snap-start">
+                <div className="h-[88vh] snap-start">
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 1 }}
-                        viewport={{ amount: "all" }}
-                        className="flex flex-col items-center justify-center gap-8 max-w-[70%]"
+                        className="flex flex-col lg:items-center justify-center gap-4 lg:gap-8 h-[88vh] w-[88vw] lg:w-full lg:px-36"
                     >
-                        <span className="font-bold text-8xl">Hi, I'm Gunique.</span>
-                        <span className="text-4xl text-zinc-500">
+                        <span className="text-6xl font-bold lg:text-8xl">Hi, I'm Gunique.</span>
+                        <span className="text-2xl lg:text-4xl text-zinc-500">
                             I am a developer from the USA who takes his work seriously.
+                        </span>
+                        <span className="select-none text-shine-gradient lg:hidden">
+                            you can swipe {">>"} to see more, btw
                         </span>
                     </motion.div>
                 </div>
 
                 {/* Slide */}
-                <div className="flex flex-col items-center justify-center w-full h-full snap-start">
+                <div className="h-[88vh] snap-start">
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 1 }}
-                        viewport={{ amount: "all" }}
-                        className="flex flex-col items-center justify-center gap-8 max-w-[70%]"
+                        className="flex flex-col lg:items-center justify-center gap-4 lg:gap-8 h-[88vh] w-[88vw] lg:w-full lg:px-36"
                     >
-                        <span className="text-4xl text-zinc-500">
+                        <span className="text-2xl lg:text-4xl text-zinc-500">
                             I have <span className="italic font-bold text-zinc-300">4+ years experience</span> freelancing,
                             <br /> and building real-world web apps and custom bots.
                         </span>
@@ -46,38 +46,38 @@ export default function AboutMe() {
                 </div>
 
                 {/* Slide */}
-                <div className="flex flex-col items-center justify-center w-full h-full snap-start">
+                <div className="h-[88vh] snap-start">
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 1 }}
-                        viewport={{ amount: "all" }}
-                        className="flex flex-col items-center justify-center gap-6 max-w-[70%] text-center"
+                        className="flex flex-col lg:items-center justify-center gap-4 lg:gap-8 h-[88vh] w-[88vw] lg:w-full lg:px-36"
                     >
-                        <span className="text-4xl text-zinc-500">I've worked with real clients to build systems for</span>
-                        <span className="font-bold text-7xl text-zinc-300">
+                        <span className="text-2xl lg:text-4xl text-zinc-500">
+                            I've worked with real clients to build systems for
+                        </span>
+                        <span className="text-5xl font-bold lg:text-7xl text-zinc-300">
                             Automation, Moderation <br /> Dashboards & Analytics
                         </span>
 
                         <div className="flex items-end gap-4">
-                            <div className="px-2 py-1 pb-2 text-4xl font-normal border rounded-lg border-white/10">
+                            <div className="px-2 py-1 pb-2 text-2xl font-normal border rounded-lg lg:text-4xl border-white/10">
                                 <span>and yes... even</span>
                             </div>
 
-                            <span className="font-bold text-7xl text-shine-gradient">AI.</span>
+                            <span className="text-5xl font-bold lg:text-7xl text-shine-gradient">AI.</span>
                         </div>
                     </motion.div>
                 </div>
 
-                <div className="flex flex-col items-center justify-center w-full h-full snap-start">
+                <div className="h-[88vh] snap-start">
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 1 }}
-                        viewport={{ amount: "all" }}
-                        className="flex flex-col items-center justify-center gap-8 max-w-[70%]"
+                        className="flex flex-col lg:items-center justify-center gap-4 lg:gap-8 h-[88vh] w-[88vw] lg:w-full lg:px-36"
                     >
-                        <span className="text-4xl font-light text-zinc-500">
+                        <span className="text-2xl font-light lg:text-4xl text-zinc-500">
                             I’m comfortable <span className="">working with both backend and frontend,</span> <br /> and can
                             learn <span className="italic font-bold underline">any framework or language</span> required to
                             get the job done.
@@ -85,17 +85,16 @@ export default function AboutMe() {
                     </motion.div>
                 </div>
 
-                <div className="flex flex-col items-center justify-center w-full h-full snap-start">
+                <div className="h-[88vh] snap-start">
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 1 }}
-                        viewport={{ amount: "all" }}
-                        className="flex flex-col items-center justify-center gap-8 max-w-[70%]"
+                        className="flex flex-col lg:items-center justify-center gap-4 lg:gap-8 h-[88vh] w-[88vw] lg:w-full lg:px-36"
                     >
-                        <span className="text-4xl text-zinc-500">
+                        <span className="text-2xl lg:text-4xl text-zinc-500">
                             I’m currently looking for{" "}
-                            <span className="font-bold text-zinc-300">- remote job opportunities -</span> where I can bring
+                            <span className="font-bold text-zinc-300">remote job opportunities</span> where I can bring
                             value, grow with a team, and work on meaningful projects.
                         </span>
                     </motion.div>

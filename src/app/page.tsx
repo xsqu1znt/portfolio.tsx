@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 
 import Hero from "@/components/sections/home/Hero";
-import Projects from "@/components/sections/home/TopProjects";
+import TopProjects from "@/components/sections/home/TopProjects";
 import AboutMe from "@/components/sections/home/AboutMe";
 import TechStack from "@/components/sections/home/TechStack";
 import ContactMe from "@/components/sections/home/ContactMe";
@@ -13,7 +13,7 @@ export default function Home() {
             <div className="w-full h-screen overflow-y-scroll snap-y snap-mandatory">
                 <Navbar />
                 <Hero />
-                <Projects />
+                <TopProjects />
                 <AboutMe />
                 <TechStack />
                 <ContactMe />

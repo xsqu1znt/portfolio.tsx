@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Hero() {
     return (
         <section id="home" className="section">
-            <div className="flex flex-col gap-12 lg:items-center">
+            <div className="flex flex-col gap-12 -mt-16 lg:mt-0 lg:items-center">
                 <div className="flex flex-col gap-6 lg:items-center">
                     <h1 className="text-6xl font-bold">Hi, I'm Gunique.</h1>
                     <p className="text-lg text-zinc-400">
