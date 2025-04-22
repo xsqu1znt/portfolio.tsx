@@ -66,9 +66,9 @@ export default function TechStack() {
                                     zIndex: notes.length - note.index,
                                     opacity: 1 - note.index / (notes.length * 2)
                                 }}
-                                whileHover={{
+                                /* whileHover={{
                                     scale: (1 - note.index * cardScaleFactor) * (!note.index ? 1.06 : 1)
-                                }}
+                                }} */
                                 viewport={{ amount: "all" }}
                             >
                                 <NoteCard
