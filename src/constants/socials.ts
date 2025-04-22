@@ -1,11 +1,7 @@
 export default [
     {
-        name: "Gmail",
+        name: "Email",
         link: "mailto:guniquegrimble@gmail.com"
-    },
-    {
-        name: "GitHub",
-        link: "https://github.com/xsqu1znt"
     },
     {
         name: "LinkedIn",
@@ -14,5 +10,9 @@ export default [
     {
         name: "Fiverr",
         link: "https://www.fiverr.com/s/ZmGmjd8"
+    },
+    {
+        name: "GitHub",
+        link: "https://github.com/xsqu1znt"
     }
 ];

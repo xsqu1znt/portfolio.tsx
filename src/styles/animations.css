@@ -10,7 +10,7 @@
 }
 
 .text-attention-gradient {
-    background: linear-gradient(to right, #004c48 40%, #00fff2 50%, #004c48 60%);
+    background: linear-gradient(to right, #273f5b 40%, #7cb9ff 50%, #273f5b 60%);
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

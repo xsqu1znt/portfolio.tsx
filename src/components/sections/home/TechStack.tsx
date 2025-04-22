@@ -8,7 +8,7 @@ import NoteCard from "@/components/NoteCard";
 
 export default function TechStack() {
     const rootRef = useRef(null);
-    const sizeStyle = "w-80 lg:w-175 h-60 lg:h-80";
+    const sizeStyle = "w-80 lg:w-175 techcard-responsive-short";
 
     const [mousePosition, setMousePosition] = useState({ x: 0, xNormalized: 0, y: 0, yNormalized: 0 });
 
@@ -42,49 +42,48 @@ export default function TechStack() {
     }, []);
 
     return (
-        <section id="techstack" className="section">
-            <div className="flex flex-col items-center gap-4 text-center">
-                <h2 className="text-3xl font-bold">Tech Stack</h2>
-                <p className="text-zinc-500">The tech I'm expierenced in working with.</p>
-            </div>
+        <section id="techstack" className="slide">
+            <div className="slide-inner slide-inner-col">
+                <div className="slide-header">
+                    <h2>Tech Stack</h2>
+                    <p>The tech I'm expierenced in working with.</p>
+                </div>
 
-            <div ref={rootRef} className={`relative lg:mt-6 ${sizeStyle}`}>
-                {notes.map((note, idx) => {
-                    return (
-                        <motion.div
-                            key={idx}
-                            className={`absolute flex flex-col justify-between ${sizeStyle}`}
-                            style={{ transformOrigin: "top center" }}
-                            initial={{
-                                opacity: 0
-                            }}
-                            whileInView={{
-                                top: note.index * -cardOffset.y * -(mousePosition.yNormalized || -0.4),
-                                left: note.index * -cardOffset.x * -mousePosition.xNormalized,
-                                scale: 1 - note.index * cardScaleFactor,
-                                zIndex: notes.length - note.index,
-                                opacity: 1 - note.index / (notes.length * 2)
-                            }}
-                            whileHover={{
-                                scale: (1 - note.index * cardScaleFactor) * (!note.index ? 1.06 : 1)
-                            }}
-                            viewport={{ amount: "all" }}
-                        >
-                            <NoteCard
+                <div ref={rootRef} className={`relative techstack-margin-responsive-short ${sizeStyle}`}>
+                    {notes.map((note, idx) => {
+                        return (
+                            <motion.div
                                 key={idx}
-                                title={note.title}
-                                content={note.content}
-                                className={`${sizeStyle} ${
-                                    !note.index && "border-2 border-zinc-600 drop-shadow-lg"
-                                } transition-colors duration-1000`}
-                            />
-                        </motion.div>
-                    );
-                })}
+                                className={`absolute flex flex-col justify-between ${sizeStyle}`}
+                                style={{ transformOrigin: "top center" }}
+                                initial={{
+                                    opacity: 0
+                                }}
+                                whileInView={{
+                                    top: note.index * -cardOffset.y * -(mousePosition.yNormalized || -0.4),
+                                    left: note.index * -cardOffset.x * -mousePosition.xNormalized,
+                                    scale: 1 - note.index * cardScaleFactor,
+                                    zIndex: notes.length - note.index,
+                                    opacity: 1 - note.index / (notes.length * 2)
+                                }}
+                                whileHover={{
+                                    scale: (1 - note.index * cardScaleFactor) * (!note.index ? 1.06 : 1)
+                                }}
+                                viewport={{ amount: "all" }}
+                            >
+                                <NoteCard
+                                    key={idx}
+                                    title={note.title}
+                                    content={note.content}
+                                    className={`${sizeStyle} ${
+                                        !note.index && "border-2 border-zinc-600 drop-shadow-lg"
+                                    } transition-colors duration-1000`}
+                                />
+                            </motion.div>
+                        );
+                    })}
+                </div>
             </div>
-
-            {/* <span className="text-sm select-none text-attention-gradient">check out the stack {">>"} flow</span> */}
-            {/* <span className="text-sm select-none text-attention-gradient">you can swipe {">>"} to see more, btw</span> */}
         </section>
     );
 }

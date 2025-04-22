@@ -1,15 +1,23 @@
-import { Download, Menu } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 
-export function Navbar() {
+interface Props {
+    toggleMobileNav?: () => any;
+    mobileNavIsOpen?: boolean;
+}
+
+export default function Navbar(props: Props) {
     return (
-        <nav className="fixed top-0 z-50 flex items-center justify-between w-full px-8 py-4">
-            <p className="text-lg">Gunique G.</p>
+        <nav className="fixed top-0 z-50 flex items-center justify-between w-full px-8 py-4 nav-h">
+            <p className="text-xl">Gunique G.</p>
 
             {/* Mobile Menu */}
-            <div className="block lg:hidden">
-                <Menu size={32} />
+            <div className="lg:hidden">
+                <button className="hover:cursor-pointer hover:opacity-50" onClick={props.toggleMobileNav}>
+                    <Menu size={32} className={`${props.mobileNavIsOpen && "hidden"}`} />
+                    <X size={32} className={`${!props.mobileNavIsOpen && "hidden"}`} />
+                </button>
             </div>
 
             {/* Desktop Menu */}
