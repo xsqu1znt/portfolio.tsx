@@ -13,15 +13,15 @@ export default function Navbar(props: Props) {
             <p className="text-xl">Gunique G.</p>
 
             {/* Mobile Menu */}
-            <div className="lg:hidden">
+            <div className={`${!props.mobileNavIsOpen && "lg:hidden"}`}>
                 <button className="hover:cursor-pointer hover:opacity-50" onClick={props.toggleMobileNav}>
-                    <Menu size={32} className={`${props.mobileNavIsOpen && "hidden"}`} />
-                    <X size={32} className={`${!props.mobileNavIsOpen && "hidden"}`} />
+                    <Menu size={32} className={`hover:opacity-50 transition-opacity duration-100 ${props.mobileNavIsOpen && "hidden"}`} />
+                    <X size={32} className={`hover:opacity-50 transition-opacity duration-100 ${!props.mobileNavIsOpen && "hidden"}`} />
                 </button>
             </div>
 
             {/* Desktop Menu */}
-            <div className="items-center hidden gap-6 lg:flex">
+            <div className={`items-center hidden gap-6 ${!props.mobileNavIsOpen && "lg:flex"}`}>
                 <ul>
                     <li className="flex items-center gap-6">
                         <Link href="#home" className="text-lg hover:underline">
