@@ -20,16 +20,6 @@ export default {
             links: {
                 github: "https://github.com/xsqu1znt/neumorphism_calculator.jsx"
             }
-        },
-        {
-            title: "Lorem Ipsum",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-            tech: ["Typescript", "React", "SQL"],
-            projectType: "Personal",
-            links: {
-                github: "https://github.com/xsqu1znt/neumorphism_calculator.jsx"
-            }
         }
     ],
 
@@ -55,16 +45,6 @@ export default {
             links: {
                 github: "https://github.com/xsqu1znt/guirxh.heejin.js"
             }
-        },
-        {
-            title: "Lorem Ipsum",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-            tech: ["Typescript", "React", "SQL"],
-            projectType: "Personal",
-            links: {
-                github: "https://github.com/xsqu1znt/neumorphism_calculator.jsx"
-            }
         }
     ],
 
@@ -89,16 +69,6 @@ export default {
             projectType: "Personal",
             links: {
                 github: "https://github.com/xsqu1znt/jsTools"
-            }
-        },
-        {
-            title: "Lorem Ipsum",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-            tech: ["Typescript", "React", "SQL"],
-            projectType: "Personal",
-            links: {
-                github: "https://github.com/xsqu1znt/neumorphism_calculator.jsx"
             }
         }
     ]

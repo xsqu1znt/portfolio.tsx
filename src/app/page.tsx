@@ -68,7 +68,8 @@ export default function Home() {
                 </ul>
 
                 <Button asChild className="cursor-pointer" variant={"outline"} size={"lg"}>
-                    <Link href="/resume">
+                    {/* <Link href="/resume"> */}
+                    <Link href="/">
                         <Download /> Resume
                     </Link>
                 </Button>
