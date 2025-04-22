@@ -46,7 +46,7 @@ export default function TechStack() {
             <div className="slide-inner slide-inner-col">
                 <div className="slide-header">
                     <h2>Tech Stack</h2>
-                    <p>The tech I'm expierenced in working with.</p>
+                    <p>The tech I'm experienced in working with.</p>
                 </div>
 
                 <div ref={rootRef} className={`relative techstack-margin-responsive-short ${sizeStyle}`}>

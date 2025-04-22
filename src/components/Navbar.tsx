@@ -10,7 +10,7 @@ interface Props {
 export default function Navbar(props: Props) {
     return (
         <nav className="fixed top-0 z-50 flex items-center justify-between w-full px-8 py-4 nav-h">
-            <p className="text-xl">Gunique G.</p>
+            <p className="text-xl select-none">Gunique G.</p>
 
             {/* Mobile Menu */}
             <div className={`${!props.mobileNavIsOpen && "lg:hidden"}`}>
