@@ -36,16 +36,32 @@ export default function Home() {
             >
                 <ul className="nav-h-margin">
                     <li className="flex flex-col items-center gap-6">
-                        <Link href="#home" className="flex justify-center w-full text-lg hover:underline">
+                        <Link
+                            href="#home"
+                            className="flex justify-center w-full text-lg hover:underline"
+                            onClick={toggleNav}
+                        >
                             Home
                         </Link>
-                        <Link href="#projects" className="flex justify-center w-full text-lg hover:underline">
+                        <Link
+                            href="#projects"
+                            className="flex justify-center w-full text-lg hover:underline"
+                            onClick={toggleNav}
+                        >
                             Projects
                         </Link>
-                        <Link href="#about" className="flex justify-center w-full text-lg hover:underline">
+                        <Link
+                            href="#about"
+                            className="flex justify-center w-full text-lg hover:underline"
+                            onClick={toggleNav}
+                        >
                             About
                         </Link>
-                        <Link href="#contact" className="flex justify-center w-full text-lg hover:underline">
+                        <Link
+                            href="#contact"
+                            className="flex justify-center w-full text-lg hover:underline"
+                            onClick={toggleNav}
+                        >
                             Contact
                         </Link>
                     </li>

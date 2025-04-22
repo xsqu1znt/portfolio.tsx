@@ -16,7 +16,7 @@ export default function TopProjects() {
                     <h2>
                         🏆 <br /> Top Projects
                     </h2>
-                    <p className="text-zinc-500 not-lg:hidden">The projects I love the most.</p>
+                    <p className="text-zinc-500 not-lg:hidden">The ones I love the most.</p>
                     <p className="text-sm text-center select-none text-attention-gradient lg:hidden">
                         {"<<"} swiper, yes swiping! {">>"}
                     </p>
