@@ -36,14 +36,6 @@
     @apply flex flex-col items-center gap-4 text-center font-bold text-3xl [&>p]:text-base [&>p]:text-zinc-500 [&>p]:font-normal;
 }
 
-.techcard-responsive-short {
-    @apply h-60 lg:h-80;
-
-    @media (height <= 500px) {
-        @apply h-40;
-    }
-}
-
 .techstack-margin-responsive-short {
     @apply mt-6;
 

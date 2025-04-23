@@ -22,7 +22,7 @@ export default function NoteCard(props: Props) {
     const charCount = fullContent.length;
 
     return (
-        <div className={cn("flex flex-col border rounded-xl border-zinc-800 bg-card", props.className)}>
+        <div className={cn("flex flex-col border-2 rounded-xl border-zinc-800 bg-card", props.className)}>
             {/* Titlebar */}
             <div className="flex items-center justify-between gap-4 px-4 py-2 border-b border-white/10">
                 {/* Title */}
@@ -49,7 +49,7 @@ export default function NoteCard(props: Props) {
             <div className="flex flex-col flex-1 p-4 overflow-y-auto shadow-inner">
                 {props.content.map((c, i) => (
                     <div key={i} className="flex items-center">
-                        <span className="w-[24px] text-xs text-zinc-600 border-white/10 mt-[2px]">{i + 1}</span>
+                        <span className="w-[24px] text-xs text-zinc-600 border-white/10 mt-[2px] select-none">{i + 1}</span>
                         <span className="leading-relaxed text-wrap">{c}</span>
                     </div>
                 ))}
@@ -57,7 +57,7 @@ export default function NoteCard(props: Props) {
 
             {/* Footer */}
             <div className="flex items-center justify-between gap-4 px-4 py-2 text-xs border-t border-white/10 text-zinc-600">
-                <span className="font-mono">{">>>"}</span>
+                <span className="font-mono select-none">{">>>"}</span>
                 <span className="font-mono">
                     words {wordCount}, chars {charCount}
                 </span>

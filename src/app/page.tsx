@@ -20,7 +20,7 @@ export default function Home() {
 
     return (
         <main className="relative overflow-x-hidden">
-            <div className="w-screen h-screen overflow-x-hidden overflow-y-scroll snap-y snap-mandatory snap-always scroll-smooth touch-pan-y">
+            <div className="w-screen h-screen overflow-x-hidden overflow-y-scroll snap-y snap-proximity snap-always scroll-smooth touch-pan-y">
                 <Navbar toggleMobileNav={toggleNav} mobileNavIsOpen={mobileNavOpen} />
                 <Hero />
                 <TopProjects />
@@ -30,7 +30,7 @@ export default function Home() {
             </div>
 
             <div
-                className={`absolute top-0 w-screen lg:w-[30%] h-screen bg-card lg:border-l border-white/10 flex flex-col p-6 gap-6 transition-all duration-300 ease-[cubic-bezier(.15,1.05,.81,1)] ${
+                className={`z-50 absolute top-0 w-screen lg:w-[30%] h-screen bg-card lg:border-l border-white/10 flex flex-col p-6 gap-6 transition-all duration-300 ease-[cubic-bezier(.15,1.05,.81,1)] ${
                     mobileNavOpen ? "right-0 opacity-100" : "right-0 opacity-0 translate-x-full"
                 }`}
             >

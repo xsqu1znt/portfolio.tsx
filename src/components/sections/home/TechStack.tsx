@@ -1,24 +1,50 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import { useMediaQuery } from "react-responsive";
+import { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
-import { motion } from "motion/react";
-import techNotes from "@/constants/techNotes";
 import NoteCard from "@/components/NoteCard";
+import tech from "@/constants/tech";
 
+function clampOverflow(n: number, max: number) {
+    if (n < 0) return max;
+    return n % max;
+}
+
+/* TODO: Add a little popup note that explains the challenges i faced making this. */
 export default function TechStack() {
-    const rootRef = useRef(null);
-    const sizeStyle = "w-80 lg:w-175 techcard-responsive-short";
-
     const [mousePosition, setMousePosition] = useState({ x: 0, xNormalized: 0, y: 0, yNormalized: 0 });
 
-    const [cardOffset, setCardOffset] = useState({ x: 50, y: 25 });
-    const [cardScaleFactor, setCardScaleFactor] = useState(0.06);
+    const [cards, setCards] = useState(tech.map((t, idx) => ({ index: idx, ...t })));
+    const [cardSize, setCardSize] = useState({ w: 320, h: 240 });
 
-    const [notes, setNotes] = useState(techNotes.map((n, idx) => ({ index: idx, ...n })));
+    const mediaIsLarge = useMediaQuery({ query: "(width >= 64rem)" });
+    const mediaIsShort = useMediaQuery({ query: "(height <= 500px)" });
 
     useEffect(() => {
-        if (isMobile) return;
+        let size = { w: 0, h: 0 };
+
+        if (mediaIsLarge) {
+            size.w = 700;
+            size.h = 320;
+        } else {
+            size.w = 320;
+            size.h = 240;
+        }
+
+        if (mediaIsShort) {
+            size.h = 160;
+        }
+
+        setCardSize(size);
+    }, [mediaIsLarge ?? false, mediaIsShort ?? false]);
+
+    useEffect(() => {
+        if (isMobile) {
+            setMousePosition({ x: 0, xNormalized: 0, y: 0, yNormalized: 0 });
+            return;
+        }
 
         const handleMouseMove = (e: MouseEvent) => {
             setMousePosition({
@@ -35,8 +61,8 @@ export default function TechStack() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setNotes(prev => prev.map(note => ({ ...note, index: (note.index + 1) % notes.length })));
-        }, 5_000);
+            setCards(prev => prev.map(c => ({ ...c, index: clampOverflow(c.index - 1, cards.length - 1) })));
+        }, 2_500);
 
         return () => clearInterval(interval);
     }, []);
@@ -44,42 +70,68 @@ export default function TechStack() {
     return (
         <section id="techstack" className="slide">
             <div className="slide-inner slide-inner-col">
-                <div className="slide-header">
+                <div className="z-10 slide-header">
                     <h2>Tech Stack</h2>
-                    <p>The tech I'm experienced in working with.</p>
+                    <Popover>
+                        <PopoverTrigger>
+                            <p className="text-base font-normal text-zinc-500">
+                                The tech I'm experienced in working with.{" "}
+                                <span className="text-shine-gradient">{isMobile ? "Tap" : "Click"} me for a rant.</span>
+                            </p>
+                        </PopoverTrigger>
+                        <PopoverContent className="border-zinc-600">
+                            <span>
+                                This stack effect was originally done using the{" "}
+                                <a
+                                    href="https://motion.dev/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="link-accent-primary"
+                                >
+                                    Motion
+                                </a>{" "}
+                                library. <br /> I then realized the shuffling effect was very bugged on Chromium browsers (I
+                                use Firefox). <br /> <br /> So I remade the effect entirely from scratch. ☠️
+                            </span>
+                        </PopoverContent>
+                    </Popover>
                 </div>
 
-                <div ref={rootRef} className={`relative techstack-margin-responsive-short ${sizeStyle}`}>
-                    {notes.map((note, idx) => {
+                <div
+                    className="relative techstack-margin-responsive-short"
+                    style={{ width: `${cardSize.w}px`, height: `${cardSize.h}px` }}
+                >
+                    {cards.map((card, idx) => {
+                        const [isHovering, setIsHovering] = useState(false);
+
+                        const offset = { x: 50, y: !mediaIsShort ? 25 : 10 };
+                        const scaleFactor = 0.06;
+                        const hoverScaleFactor = 1.05;
+
                         return (
-                            <motion.div
+                            <div
                                 key={idx}
-                                className={`absolute flex flex-col justify-between ${sizeStyle}`}
-                                style={{ transformOrigin: "top center" }}
-                                initial={{
-                                    opacity: 0
+                                className="absolute transition-all duration-500 ease-out"
+                                style={{
+                                    width: `${cardSize.w - scaleFactor * card.index}px`,
+                                    height: `${cardSize.h}px`,
+                                    scale: isHovering ? 1 * hoverScaleFactor : 1 - scaleFactor * card.index,
+                                    top: `${card.index * -offset.y + card.index * offset.y * mousePosition.yNormalized}px`,
+                                    left: `${card.index * -offset.x * -mousePosition.xNormalized}px`,
+                                    opacity: `${1 - card.index / cards.length}`,
+                                    zIndex: cards.length - card.index
                                 }}
-                                whileInView={{
-                                    top: note.index * -cardOffset.y * -(mousePosition.yNormalized || -0.4),
-                                    left: note.index * -cardOffset.x * -mousePosition.xNormalized,
-                                    scale: 1 - note.index * cardScaleFactor,
-                                    zIndex: notes.length - note.index,
-                                    opacity: 1 - note.index / (notes.length * 2)
-                                }}
-                                /* whileHover={{
-                                    scale: (1 - note.index * cardScaleFactor) * (!note.index ? 1.06 : 1)
-                                }} */
-                                viewport={{ amount: "all" }}
+                                onMouseEnter={() => setIsHovering(!card.index && !isMobile ? true : false)}
+                                onMouseLeave={() => setIsHovering(false)}
                             >
                                 <NoteCard
-                                    key={idx}
-                                    title={note.title}
-                                    content={note.content}
-                                    className={`${sizeStyle} ${
-                                        !note.index && "border-2 border-zinc-600 drop-shadow-lg"
-                                    } transition-colors duration-1000`}
+                                    title={card.title}
+                                    content={card.content}
+                                    className={`w-full h-full ${
+                                        !card.index && "border-zinc-600 drop-shadow-lg"
+                                    } transition-all duration-1000`}
                                 />
-                            </motion.div>
+                            </div>
                         );
                     })}
                 </div>

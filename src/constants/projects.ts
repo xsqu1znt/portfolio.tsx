@@ -4,7 +4,7 @@ export default {
             title: "Portfolio",
             description:
                 "Huh, isn't this the very page you're looking at? Built with hopes, prayers, and Next.js. Designed with passion, persistence, TailwindCSS, and a concerning amount of caffiene.",
-            tech: ["Typescript", "Next.js", "TailwindCSS", "Motion", "shadcn/ui"],
+            tech: ["Typescript", "Next.js", "TailwindCSS", "shadcn/ui", "Motion"],
             projectType: "Personal",
             links: {
                 site: "/",
