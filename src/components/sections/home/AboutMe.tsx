@@ -7,7 +7,7 @@ export default function AboutMe() {
         <section id="about" className="slide">
             <div className="slide-inner-no-padding">
                 {/* Slideshow Container */}
-                <div className="flex flex-row lg:flex-col flex-nowrap overflow-x-scroll lg:overflow-y-scroll snap-both snap-always scroll-smooth snap-mandatory [&>div]:w-screen [&>div]:h-screen [&>div]:p-4 [&>div]:shrink-0 [&>div]:snap-start no-scrollbar">
+                <div className="flex flex-row lg:flex-col flex-nowrap overflow-x-scroll lg:overflow-y-scroll snap-x lg:snap-y snap-always scroll-smooth snap-mandatory [&>div]:w-screen [&>div]:h-screen [&>div]:p-4 [&>div]:shrink-0 [&>div]:snap-start no-scrollbar">
                     {/* Slide */}
                     <motion.div
                         initial={{ opacity: 0 }}
