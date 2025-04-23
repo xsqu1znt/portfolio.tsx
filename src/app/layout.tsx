@@ -8,8 +8,8 @@ import "../styles/animations.css";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-    title: "Gunique G. - A passionate software engineer",
-    description: "Portfolio of a passionate software engineer specializing in full-stack web apps and custom bots.",
+    title: "Gunique G. | Full-Stack Web/Software Developer",
+    description: "Portfolio of a Web/Software Developer specializing in full-stack web apps and custom bots.",
     keywords: [
         "portfolio",
         "github",

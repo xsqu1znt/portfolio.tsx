@@ -1,26 +1,20 @@
 "use client";
 
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
-import { useMediaQuery } from "react-responsive";
-import { useEffect, useState } from "react";
+import { clampOverflow, useSafeMediaQuery } from "@/lib/utils";
 import { isMobile } from "react-device-detect";
+import { useEffect, useState } from "react";
 import NoteCard from "@/components/NoteCard";
 import tech from "@/constants/tech";
 
-function clampOverflow(n: number, max: number) {
-    if (n < 0) return max;
-    return n % max;
-}
-
-/* TODO: Add a little popup note that explains the challenges i faced making this. */
 export default function TechStack() {
     const [mousePosition, setMousePosition] = useState({ x: 0, xNormalized: 0, y: 0, yNormalized: 0 });
 
     const [cards, setCards] = useState(tech.map((t, idx) => ({ index: idx, ...t })));
     const [cardSize, setCardSize] = useState({ w: 320, h: 240 });
 
-    const mediaIsLarge = useMediaQuery({ query: "(width >= 64rem)" });
-    const mediaIsShort = useMediaQuery({ query: "(height <= 500px)" });
+    const mediaIsLarge = useSafeMediaQuery("(width >= 64rem)");
+    const mediaIsShort = useSafeMediaQuery("(height <= 500px)");
 
     useEffect(() => {
         let size = { w: 0, h: 0 };
@@ -38,7 +32,7 @@ export default function TechStack() {
         }
 
         setCardSize(size);
-    }, [mediaIsLarge ?? false, mediaIsShort ?? false]);
+    }, [mediaIsLarge, mediaIsShort]);
 
     useEffect(() => {
         if (isMobile) {
@@ -62,7 +56,7 @@ export default function TechStack() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCards(prev => prev.map(c => ({ ...c, index: clampOverflow(c.index - 1, cards.length - 1) })));
-        }, 2_500);
+        }, 5_000);
 
         return () => clearInterval(interval);
     }, []);
