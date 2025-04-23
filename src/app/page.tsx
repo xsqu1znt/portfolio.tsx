@@ -20,7 +20,7 @@ export default function Home() {
 
     return (
         <main className="relative overflow-x-hidden">
-            <div className="w-screen h-screen overflow-x-hidden overflow-y-scroll snap-y snap-proximity snap-always scroll-smooth touch-pan-y">
+            <div className="w-screen h-screen overflow-x-hidden overflow-y-scroll snap-y snap-mandatory snap-always scroll-smooth touch-pan-y">
                 <Navbar toggleMobileNav={toggleNav} mobileNavIsOpen={mobileNavOpen} />
                 <Hero />
                 <TopProjects />
