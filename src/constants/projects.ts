@@ -28,7 +28,7 @@ export default {
             title: "Discord Bot Template",
             description:
                 "A modular, well-commented Typescript template for creating Discord bots. Featuring custom utilies and support for MongoDB out of the box.",
-            subText: "Currently used for 13 of my client's projects.",
+            subText: "Currently used for 13 of my clients' projects.",
             tech: ["Typescript", "Discord.js", "MongoDB", "Mongoose"],
             projectType: "Personal",
             links: {

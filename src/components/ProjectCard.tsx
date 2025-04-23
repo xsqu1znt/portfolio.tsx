@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { cn } from "@/lib/utils";
 import BubbleTag from "./BubbleTag";
 import Link from "next/link";
+import NoTouchPropagation from "@/components/NoTouchPropagation";
 
 interface Props {
     project: {
@@ -32,13 +33,15 @@ export default function ProjectCard(props: Props) {
                 )}
             </CardHeader>
             <CardContent>
-                <div className="flex items-center w-full gap-2 not-lg:overflow-x-auto lg:flex-wrap no-scrollbar">
-                    {props.project.tech.map((tech, i) => (
-                        <BubbleTag key={i} size={"sm"} className="not-lg:flex-shrink-0">
-                            {tech}
-                        </BubbleTag>
-                    ))}
-                </div>
+                <NoTouchPropagation>
+                    <div className="flex items-center w-full gap-2 touch-pan-x not-lg:overflow-x-auto whitespace-nowrap lg:flex-wrap no-scrollbar">
+                        {props.project.tech.map((tech, i) => (
+                            <BubbleTag key={i} size={"sm"} className="">
+                                {tech}
+                            </BubbleTag>
+                        ))}
+                    </div>
+                </NoTouchPropagation>
             </CardContent>
 
             <CardFooter className="justify-between [.border-t]:pt-3 -mb-2 border-t border-white/5">
