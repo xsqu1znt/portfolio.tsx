@@ -62,7 +62,7 @@ export default function TechStack() {
     }, []);
 
     return (
-        <section id="techstack" className="slide">
+        <section id="tech" className="slide">
             <div className="slide-inner slide-inner-col">
                 <div className="z-10 slide-header">
                     <h2>Tech Stack</h2>

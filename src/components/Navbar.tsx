@@ -10,7 +10,7 @@ interface Props {
 export default function Navbar(props: Props) {
     return (
         <nav className="fixed top-0 z-[100] flex items-center justify-between w-full px-8 py-4 nav-h">
-            <Link href="/" className="text-xl cursor-pointer select-none">
+            <Link href="/#home" className="text-xl cursor-pointer select-none">
                 Gunique G.
             </Link>
 
@@ -37,6 +37,9 @@ export default function Navbar(props: Props) {
                         </Link>
                         <Link href="#about" className="text-lg hover:underline">
                             About
+                        </Link>
+                        <Link href="#tech" className="text-lg hover:underline">
+                            Tech
                         </Link>
                         <Link href="#contact" className="text-lg hover:underline">
                             Contact

@@ -36,9 +36,6 @@ export default function Home() {
             >
                 <ul className="nav-h-margin">
                     <li className="flex flex-col items-center gap-6">
-                        <Link href="/" className="flex justify-center w-full text-lg hover:underline" onClick={toggleNav}>
-                            Home
-                        </Link>
                         <Link
                             href="/#projects"
                             className="flex justify-center w-full text-lg hover:underline"
@@ -52,6 +49,13 @@ export default function Home() {
                             onClick={toggleNav}
                         >
                             About
+                        </Link>
+                        <Link
+                            href="/#tech"
+                            className="flex justify-center w-full text-lg hover:underline"
+                            onClick={toggleNav}
+                        >
+                            Tech
                         </Link>
                         <Link
                             href="/#contact"
