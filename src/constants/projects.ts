@@ -3,7 +3,7 @@ export default {
         {
             title: "Portfolio",
             description:
-                "Huh, isn't this the very page you're looking at? Built with hopes, prayers, and Next.js. Designed with passion, persistence, TailwindCSS, and a concerning amount of caffiene.",
+                "The very page you're looking at! Isn't it nice? Built with hopes and prayers. Designed with passion, and a concerning amount of caffeine.",
             tech: ["Typescript", "Next.js", "TailwindCSS", "shadcn/ui", "Motion"],
             projectType: "Personal",
             links: {
@@ -25,25 +25,25 @@ export default {
 
     Discord: [
         {
-            title: "Discord Bot Template",
-            description:
-                "A modular, well-commented Typescript template for creating Discord bots. Featuring custom utilies and support for MongoDB out of the box.",
-            subText: "Currently used for 13 of my clients' projects.",
-            tech: ["Typescript", "Discord.js", "MongoDB", "Mongoose"],
-            projectType: "Personal",
-            links: {
-                github: "https://github.com/xsqu1znt/template_djs_v14.ts"
-            }
-        },
-        {
             title: "Heejin",
             description:
-                "A large-scale k-pop card collecting bot with thousands of commissioned cards. Its playerbase reached a high of 800+ active users.",
+                "A large-scale k-pop card collecting bot with thousands of commissioned cards. Its playerbase reached a high of 800+ active users. Maintained and updated for 1 year.",
             subText: "The bot and its owner are no longer active.",
             tech: ["Javascript", "Discord.js", "MongoDB", "Mongoose"],
             projectType: "Client Work",
             links: {
                 github: "https://github.com/xsqu1znt/guirxh.heejin.js"
+            }
+        },
+        {
+            title: "Discord Bot Template",
+            description:
+                "A modular, well-commented Typescript template for creating Discord bots. Featuring custom utilies and support for MongoDB out of the box.",
+            subText: "Currently used for 13+ of my clients' projects.",
+            tech: ["Typescript", "Discord.js", "MongoDB", "Mongoose"],
+            projectType: "Personal",
+            links: {
+                github: "https://github.com/xsqu1znt/template_djs_v14.ts"
             }
         }
     ],
@@ -65,7 +65,7 @@ export default {
             description:
                 "A custom utility module for Discord.js. Also created to make my life easier while developing Discord bots, and use it for all the bots I make.",
             subText: "Created and used by my Discord Bot Template.",
-            tech: ["Typescript", "Javascript", "Discord.js"],
+            tech: ["Typescript", "Javascript", "Discord.js", "jsTools"],
             projectType: "Personal",
             links: {
                 github: "https://github.com/xsqu1znt/jsTools"
