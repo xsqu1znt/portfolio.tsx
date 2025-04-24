@@ -10,13 +10,21 @@ interface Props {
 export default function Navbar(props: Props) {
     return (
         <nav className="fixed top-0 z-[100] flex items-center justify-between w-full px-8 py-4 nav-h">
-            <p className="text-xl select-none">Gunique G.</p>
+            <Link href="/" className="text-xl cursor-pointer select-none">
+                Gunique G.
+            </Link>
 
             {/* Mobile Menu */}
             <div className={`${!props.mobileNavIsOpen && "lg:hidden"}`}>
                 <button className="hover:cursor-pointer hover:opacity-50" onClick={props.toggleMobileNav}>
-                    <Menu size={32} className={`hover:opacity-50 transition-opacity duration-100 ${props.mobileNavIsOpen && "hidden"}`} />
-                    <X size={32} className={`hover:opacity-50 transition-opacity duration-100 ${!props.mobileNavIsOpen && "hidden"}`} />
+                    <Menu
+                        size={32}
+                        className={`hover:opacity-50 transition-opacity duration-100 ${props.mobileNavIsOpen && "hidden"}`}
+                    />
+                    <X
+                        size={32}
+                        className={`hover:opacity-50 transition-opacity duration-100 ${!props.mobileNavIsOpen && "hidden"}`}
+                    />
                 </button>
             </div>
 
@@ -24,9 +32,6 @@ export default function Navbar(props: Props) {
             <div className={`items-center hidden gap-6 ${!props.mobileNavIsOpen && "lg:flex"}`}>
                 <ul>
                     <li className="flex items-center gap-6">
-                        <Link href="#home" className="text-lg hover:underline">
-                            Home
-                        </Link>
                         <Link href="#projects" className="text-lg hover:underline">
                             Projects
                         </Link>
@@ -39,9 +44,8 @@ export default function Navbar(props: Props) {
                     </li>
                 </ul>
 
-                <Button asChild className="cursor-pointer" variant={"outline"} size={"lg"}>
-                    {/* <Link href="/resume"> */}
-                    <Link href="/">
+                <Button asChild variant={"outline"} size={"lg"}>
+                    <Link href="/resume.pdf" download="resume.pdf" locale={false}>
                         <Download /> Resume
                     </Link>
                 </Button>

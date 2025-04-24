@@ -36,29 +36,25 @@ export default function Home() {
             >
                 <ul className="nav-h-margin">
                     <li className="flex flex-col items-center gap-6">
-                        <Link
-                            href="#home"
-                            className="flex justify-center w-full text-lg hover:underline"
-                            onClick={toggleNav}
-                        >
+                        <Link href="/" className="flex justify-center w-full text-lg hover:underline" onClick={toggleNav}>
                             Home
                         </Link>
                         <Link
-                            href="#projects"
+                            href="/#projects"
                             className="flex justify-center w-full text-lg hover:underline"
                             onClick={toggleNav}
                         >
                             Projects
                         </Link>
                         <Link
-                            href="#about"
+                            href="/#about"
                             className="flex justify-center w-full text-lg hover:underline"
                             onClick={toggleNav}
                         >
                             About
                         </Link>
                         <Link
-                            href="#contact"
+                            href="/#contact"
                             className="flex justify-center w-full text-lg hover:underline"
                             onClick={toggleNav}
                         >
@@ -67,9 +63,8 @@ export default function Home() {
                     </li>
                 </ul>
 
-                <Button asChild className="cursor-pointer" variant={"outline"} size={"lg"}>
-                    {/* <Link href="/resume"> */}
-                    <Link href="/">
+                <Button asChild variant={"outline"} size={"lg"}>
+                    <Link href="/resume.pdf" download="resume.pdf" locale={false}>
                         <Download /> Resume
                     </Link>
                 </Button>
