@@ -1,19 +1,19 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import { cn } from "@/lib/utils";
+import NoTouchPropagation from "@/components/NoTouchPropagation";
 import BubbleTag from "./BubbleTag";
 import Link from "next/link";
-import NoTouchPropagation from "@/components/NoTouchPropagation";
 
 interface Props {
     project: {
         title: string;
         description: string;
-        subText?: string;
+        subText?: string | null;
         tech: string[];
         projectType: string;
         links: {
-            demo?: string;
-            site?: string;
+            demo?: string | null;
+            site?: string | null;
             github?: string;
         } | null;
     };

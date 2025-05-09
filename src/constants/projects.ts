@@ -4,9 +4,11 @@ export default {
             title: "My Portfolio",
             description:
                 "The very page you're looking at! Isn't it nice? Designed with a clean, responsive UI in mind to showcase my projects and contacts. Implemented with ❤️, deployed with Vercel.",
+            subText: null,
             tech: ["Typescript", "NextJs", "TailwindCSS", "shadcn/ui", "Motion", "Vercel"],
             projectType: "Personal",
             links: {
+                demo: null,
                 site: "/",
                 github: "https://github.com/xsqu1znt/portfolio.tsx"
             }
@@ -15,9 +17,11 @@ export default {
             title: "Neumorphism Calculator",
             description:
                 "A working calculater with a neumorphic design. It features basic operators, and demonstrates the use of React's state management. Along with fancy CSS gradient use-cases, of course!",
+            subText: null,
             tech: ["Javascript", "React", "Vanilla CSS"],
             projectType: "Personal",
             links: {
+                demo: null,
                 site: null,
                 github: "https://github.com/xsqu1znt/neumorphism_calculator.jsx"
             }
@@ -33,6 +37,7 @@ export default {
             tech: ["Javascript", "Discord.js", "MongoDB", "Mongoose"],
             projectType: "Client Work",
             links: {
+                demo: null,
                 site: null,
                 github: "https://github.com/xsqu1znt/guirxh.heejin.js"
             }
@@ -45,6 +50,7 @@ export default {
             tech: ["Typescript", "Discord.js", "MongoDB", "Mongoose"],
             projectType: "Personal",
             links: {
+                demo: null,
                 site: null,
                 github: "https://github.com/xsqu1znt/template_djs_v14.ts"
             }
@@ -60,6 +66,7 @@ export default {
             tech: ["Typescript", "Javascript"],
             projectType: "Personal",
             links: {
+                demo: null,
                 site: null,
                 github: "https://github.com/xsqu1znt/jsTools"
             }
@@ -72,6 +79,7 @@ export default {
             tech: ["Typescript", "Javascript", "Discord.js", "jsTools"],
             projectType: "Personal",
             links: {
+                demo: null,
                 site: null,
                 github: "https://github.com/xsqu1znt/jsTools"
             }
