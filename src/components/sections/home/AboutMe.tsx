@@ -35,7 +35,7 @@ export default function AboutMe() {
                     >
                         <div className="flex flex-col justify-center max-w-6xl gap-4 lg:gap-8 lg:items-center">
                             <span className="text-2xl lg:text-4xl text-zinc-500">
-                                I have <span className="italic font-bold text-zinc-300">4+ years experience</span>{" "}
+                                I have <span className="italic font-bold text-zinc-300">5+ years experience</span>{" "}
                                 freelancing,
                                 <br /> and building real-world web apps and custom bots.
                             </span>
