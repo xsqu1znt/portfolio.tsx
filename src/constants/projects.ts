@@ -1,10 +1,10 @@
 export default {
     Web: [
         {
-            title: "Portfolio",
+            title: "My Portfolio",
             description:
-                "The very page you're looking at! Isn't it nice? Built with hopes and prayers. Designed with passion, and a concerning amount of caffeine.",
-            tech: ["Typescript", "Next.js", "TailwindCSS", "shadcn/ui", "Motion"],
+                "The very page you're looking at! Isn't it nice? Designed with a clean, responsive UI in mind to showcase my projects and contacts. Implemented with ❤️, deployed with Vercel.",
+            tech: ["Typescript", "NextJs", "TailwindCSS", "shadcn/ui", "Motion", "Vercel"],
             projectType: "Personal",
             links: {
                 site: "/",
@@ -14,10 +14,11 @@ export default {
         {
             title: "Neumorphism Calculator",
             description:
-                "A working calculater with a neumorphic design. It features basic operators, and demonstrates the use of React's state management. And fancy CSS gradient use-cases, of course!",
-            tech: ["Javascript", "CSS", "React"],
+                "A working calculater with a neumorphic design. It features basic operators, and demonstrates the use of React's state management. Along with fancy CSS gradient use-cases, of course!",
+            tech: ["Javascript", "React", "Vanilla CSS"],
             projectType: "Personal",
             links: {
+                site: null,
                 github: "https://github.com/xsqu1znt/neumorphism_calculator.jsx"
             }
         }
@@ -32,6 +33,7 @@ export default {
             tech: ["Javascript", "Discord.js", "MongoDB", "Mongoose"],
             projectType: "Client Work",
             links: {
+                site: null,
                 github: "https://github.com/xsqu1znt/guirxh.heejin.js"
             }
         },
@@ -43,6 +45,7 @@ export default {
             tech: ["Typescript", "Discord.js", "MongoDB", "Mongoose"],
             projectType: "Personal",
             links: {
+                site: null,
                 github: "https://github.com/xsqu1znt/template_djs_v14.ts"
             }
         }
@@ -57,6 +60,7 @@ export default {
             tech: ["Typescript", "Javascript"],
             projectType: "Personal",
             links: {
+                site: null,
                 github: "https://github.com/xsqu1znt/jsTools"
             }
         },
@@ -68,6 +72,7 @@ export default {
             tech: ["Typescript", "Javascript", "Discord.js", "jsTools"],
             projectType: "Personal",
             links: {
+                site: null,
                 github: "https://github.com/xsqu1znt/jsTools"
             }
         }

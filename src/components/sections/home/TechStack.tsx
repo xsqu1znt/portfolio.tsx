@@ -3,7 +3,7 @@
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { clampOverflow, useSafeMediaQuery } from "@/lib/utils";
 import { isMobile } from "react-device-detect";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import NoteCard from "@/components/NoteCard";
 import tech from "@/constants/tech";
 
@@ -12,9 +12,15 @@ export default function TechStack() {
 
     const [cards, setCards] = useState(tech.map((t, idx) => ({ index: idx, ...t })));
     const [cardSize, setCardSize] = useState({ w: 320, h: 240 });
+    const [canPlay, setCanPlay] = useState(true);
+    const canPlayRef = useRef(canPlay);
 
     const mediaIsLarge = useSafeMediaQuery("(width >= 64rem)");
     const mediaIsShort = useSafeMediaQuery("(height <= 500px)");
+
+    useEffect(() => {
+        canPlayRef.current = canPlay;
+    }, [canPlay]);
 
     useEffect(() => {
         let size = { w: 0, h: 0 };
@@ -55,6 +61,7 @@ export default function TechStack() {
 
     useEffect(() => {
         const interval = setInterval(() => {
+            if (!canPlayRef.current) return;
             setCards(prev => prev.map(c => ({ ...c, index: clampOverflow(c.index - 1, cards.length - 1) })));
         }, 5_000);
 
@@ -115,8 +122,14 @@ export default function TechStack() {
                                     opacity: `${1 - card.index / cards.length}`,
                                     zIndex: cards.length - card.index
                                 }}
-                                onMouseEnter={() => setIsHovering(!card.index && !isMobile ? true : false)}
-                                onMouseLeave={() => setIsHovering(false)}
+                                onMouseEnter={() => {
+                                    setIsHovering(!card.index && !isMobile ? true : false);
+                                    setCanPlay(!card.index && !isMobile ? false : true);
+                                }}
+                                onMouseLeave={() => {
+                                    setIsHovering(false);
+                                    setCanPlay(true);
+                                }}
                             >
                                 <NoteCard
                                     title={card.title}
