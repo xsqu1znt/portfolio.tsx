@@ -9,7 +9,7 @@ export default function Hero() {
                 <div className="flex flex-col gap-6 lg:items-center">
                     <h1 className="text-6xl font-bold">Hi, I'm Gunique.</h1>
                     <p className="text-lg text-zinc-400">
-                        I'm a passionate developer that builds fast, scalable web apps and custom Discord bots. 🔥
+                        I'm a Full Stack Web Developer that builds modern, scalable web apps and custom bots. 🔥
                     </p>
                 </div>
 

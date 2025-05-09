@@ -68,7 +68,10 @@ export default function Home() {
                 </ul>
 
                 <Button asChild variant={"outline"} size={"lg"}>
-                    <Link href="/resume.pdf" download="resume.pdf" locale={false}>
+                    <Link
+                        href="/Gunique Grimble - Full Stack Web Developer Resume.pdf"
+                        download="Gunique Grimble - Full Stack Web Developer Resume.pdf"
+                    >
                         <Download /> Resume
                     </Link>
                 </Button>
