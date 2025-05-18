@@ -8,7 +8,6 @@ export default function ContactMe() {
             <div className="slide-inner slide-inner-col">
                 <div className="slide-header">
                     <h2>Contact Me</h2>
-                    {/* <p>🚧 This section is under construction 🚧</p> */}
                     <p className="text-zinc-500">Want to work together? I'm always open to new opportunities!</p>
                 </div>
 
@@ -23,6 +22,7 @@ export default function ContactMe() {
                 <span className="text-sm cursor-default link-accent-primary">🇺🇸 +1 (808) 426-6141</span>
             </div>
 
+            {/* Footer */}
             <Footer />
         </section>
     );

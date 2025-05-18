@@ -1,9 +1,22 @@
 export default {
     Web: [
         {
+            title: "AdVerb",
+            description:
+                "AI-powered SMS and ad copy optimizer built with NextJs, Tailwind, and Supabase. Features include tone adjustment, engagement suggestions, version history, and A/B testing support.",
+            subText: null,
+            tech: ["Typescript", "NextJs", "TailwindCSS", "OpenAI", "Supabase", "Vercel"],
+            projectType: "Personal",
+            links: {
+                demo: null,
+                site: "https://adverbgg.vercel.app",
+                github: "https://github.com/xsqu1znt/adverb.tsx"
+            }
+        },
+        {
             title: "My Portfolio",
             description:
-                "The very page you're looking at! Isn't it nice? Designed with a clean, responsive UI in mind to showcase my projects and contacts. Implemented with ❤️, deployed with Vercel.",
+                "The very page you're looking at! Isn't it nice? Designed with a clean, responsive UI in mind to showcase my projects and contacts. Implemented with love, deployed with Vercel.",
             subText: null,
             tech: ["Typescript", "NextJs", "TailwindCSS", "shadcn/ui", "Motion", "Vercel"],
             projectType: "Personal",
@@ -63,7 +76,7 @@ export default {
             description:
                 "A utility module created because I wanted to learn how to do things myself without depending on libraries such as lodash.",
             subText: "Created and used by my Discord Bot Template.",
-            tech: ["Typescript", "Javascript"],
+            tech: ["Typescript -> Javascript", "NodeJs Only"],
             projectType: "Personal",
             links: {
                 demo: null,
@@ -76,7 +89,7 @@ export default {
             description:
                 "A custom utility module for Discord.js. Also created to make my life easier while developing Discord bots, and use it for all the bots I make.",
             subText: "Created and used by my Discord Bot Template.",
-            tech: ["Typescript", "Javascript", "Discord.js", "jsTools"],
+            tech: ["Typescript -> Javascript", "NodeJs Only", "Discord.js", "jsTools"],
             projectType: "Personal",
             links: {
                 demo: null,

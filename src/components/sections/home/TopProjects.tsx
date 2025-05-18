@@ -44,10 +44,6 @@ export default function TopProjects() {
                             </Carousel>
                         </TabsContent>
                     ))}
-
-                    {/* <span className="text-sm text-center select-none text-attention-gradient lg:hidden">
-                        {"<<"} swiper, yes swiping! {">>"}
-                    </span> */}
                 </Tabs>
             </div>
         </section>

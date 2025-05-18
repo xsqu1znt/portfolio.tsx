@@ -2,8 +2,8 @@
 
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { clampOverflow, useSafeMediaQuery } from "@/lib/utils";
-import { isMobile } from "react-device-detect";
 import { useEffect, useRef, useState } from "react";
+import { isMobile } from "react-device-detect";
 import NoteCard from "@/components/NoteCard";
 import tech from "@/constants/tech";
 
