@@ -5,13 +5,18 @@ import projects from "@/constants/projects";
 
 export function Projects() {
     return (
-        <section id="projects" className="page-container">
-            <div className="page-content content-center">
-                <div className="grid grid-cols-2 gap-2">
+        <section id="projects" className="section">
+            <div className="section-content section-center">
+                {/* Section header */}
+                {/* <div className="flex flex-col leading-[1.2] tracking-tight">
+                    <h2 className="mt-2 text-4xl font-bold">🏆 Top Projects</h2>
+                </div> */}
+
+                {/* <div className="grid grid-cols-2 gap-2">
                     {Object.values(projects).map(projs =>
                         projs.map((proj, i) => <ProjectCard key={i} project={proj} className="w-lg" />)
                     )}
-                </div>
+                </div> */}
 
                 {/* <div className="slide-header">
                     <h2>

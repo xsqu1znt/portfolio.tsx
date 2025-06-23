@@ -90,18 +90,35 @@
 }
 
 /* - - - - - - - - - - - - - - - - - - */
-.gradient-morph {
-    animation: gradient-morph 30s ease infinite;
+@property --btn-outline-gradient-deg {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: true;
 }
 
-@keyframes gradient-morph {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
+.btn-animated-outline {
+    position: relative;
+}
+.btn-animated-outline::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0.35;
+
+    border: 1px solid transparent;
+    background: linear-gradient(var(--btn-outline-gradient-deg), white, transparent) border-box;
+    mask:
+        linear-gradient(black) border-box,
+        linear-gradient(black) padding-box;
+    mask-composite: subtract;
+
+    animation: btn-outline-gradient-spin 5s linear infinite;
+}
+
+@keyframes btn-outline-gradient-spin {
+    to {
+        --btn-outline-gradient-deg: 360deg;
     }
 }

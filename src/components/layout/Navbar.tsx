@@ -14,7 +14,7 @@ const SECTIONS = [
 ];
 
 export function Navbar(props: Props) {
-    const [currentSection, setCurrentSection] = useState<string | null>(null);
+    /* const [currentSection, setCurrentSection] = useState<string | null>(null);
     const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
 
     useEffect(() => {
@@ -45,20 +45,20 @@ export function Navbar(props: Props) {
         });
 
         return () => observer.disconnect();
-    }, []);
+    }, []); */
 
     return (
         <nav className="nav-h fixed top-0 z-[100] flex w-full items-center justify-between px-8 lg:px-16">
             <div className="flex items-center gap-4">
                 <a href="#home" className="cursor-pointer text-xl font-bold select-none">
-                    Gunique G.
+                    GG
                 </a>
 
-                {currentSection && (
+                {/* {currentSection && (
                     <span className="rounded-full border-2 border-dashed border-white/10 px-4 py-2 text-sm select-none">
                         {currentSection}
                     </span>
-                )}
+                )} */}
             </div>
 
             {/* Mobile Menu */}
