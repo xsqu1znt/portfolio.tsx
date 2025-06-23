@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import "../styles/globals.css";
+
+import "./globals.css";
 import "../styles/layout.css";
-import "../styles/functional.css";
 import "../styles/animations.css";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-    title: "Gunique G. | Full-Stack Web/Software Developer",
-    description: "Portfolio of a Web/Software Developer specializing in full-stack web apps and custom bots.",
+    title: "Gunique G. | Full-Stack SWE",
+    description: "A full-stack SWE specializing in xsqu1zn't web apps and bots.",
     keywords: [
         "portfolio",
         "github",
@@ -21,17 +21,24 @@ export const metadata: Metadata = {
         "javascript",
         "typescript",
         "nodejs",
-        "nextjs",
+        "next.js",
         "react",
         "fiverr",
         "freelancer"
     ]
 };
 
+export const viewport: Viewport = {
+    themeColor: [
+        { media: "(prefers-color-scheme: light)", color: "oklch(0.231 0.008 274.596)" },
+        { media: "(prefers-color-scheme: dark)", color: "oklch(0.231 0.008 274.596)" }
+    ]
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en">
-            <body className={`dark ${inter.className} antialiased`}>{children}</body>
+            <body className={`dark ${inter.variable} antialiased`}>{children}</body>
         </html>
     );
 }

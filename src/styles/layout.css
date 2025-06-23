@@ -1,29 +1,48 @@
 @import "tailwindcss";
 
+.section {
+    @apply flex min-h-screen w-screen snap-start flex-col;
+}
+
+.section-content {
+    @apply min-h-screen w-screen gap-6 px-6 py-12;
+}
+
+.section-center {
+    @apply flex h-full w-full items-center justify-center;
+}
+
+/* @deprecated */
 .slide {
-    @apply flex flex-col items-center justify-center flex-1 w-screen h-screen snap-start;
+    @apply flex h-screen w-screen flex-1 snap-start flex-col items-center justify-center;
 }
 
+/* @deprecated */
 .slide-inner {
-    @apply flex flex-1 w-screen h-screen gap-6 px-6 py-12;
+    @apply flex h-screen w-screen flex-1 gap-6 px-6 py-12;
 }
 
+/* @deprecated */
 .slide-inner-no-padding {
-    @apply flex flex-1 w-screen h-screen gap-6;
+    @apply flex h-screen w-screen flex-1 gap-6;
 }
 
+/* @deprecated */
 .slide-inner-col {
     @apply flex-col items-center justify-center;
 }
 
+/* @deprecated */
 .slide-inner-col-center {
-    @apply flex-col justify-center lg:items-center;
+    @apply flex-col items-center justify-center;
 }
 
+/* @deprecated */
 .slide-inner-split {
     @apply flex-row items-center lg:flex-col lg:justify-center;
 }
 
+/* @deprecated */
 .slide-inner-split-short {
     @apply flex-col items-center justify-center;
 
@@ -32,8 +51,10 @@
     }
 }
 
+/* @deprecated */
 .slide-header {
-    @apply flex flex-col items-center gap-4 text-center font-bold text-3xl [&>p]:text-base [&>p]:text-zinc-500 [&>p]:font-normal;
+    /*@apply flex flex-col items-center gap-4 text-center font-bold text-3xl [&>p]:text-base [&>p]:text-zinc-500 [&>p]:font-normal [&>p]:text-base [&>p]:text-zinc-500 [&>p]:font-normal;*/
+    @apply flex flex-col items-center gap-4 text-center text-3xl font-bold;
 }
 
 .techstack-margin-responsive-short {
@@ -45,15 +66,19 @@
 }
 
 .nav-h {
-    @apply h-[72px];
+    @apply h-[75px] lg:h-[100px];
 }
 
 .nav-h-margin {
-    @apply mt-[72px];
+    @apply mt-[75px] lg:mt-[100px];
 }
 
 .nav-h-margin-negative {
-    @apply mt-[-72px];
+    @apply mt-[-75px] lg:mt-[-100px];
+}
+
+.link-accent-primary {
+    @apply text-blue-400 transition-colors duration-200 hover:text-blue-300;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
