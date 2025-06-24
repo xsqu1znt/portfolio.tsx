@@ -1,11 +1,12 @@
 import { FiverrSocialFLB, GithubSocialFLB, LinkedinSocialFLB } from "@/components/buttons";
+import { ChevronDown, FileText, Phone } from "lucide-react";
+import { Button } from "@/components/ui";
 import "./index.css";
-import { ChevronDown, FileText, Folder, FolderClosed, GitBranch, Phone } from "lucide-react";
 
 export function HeroV2() {
     return (
-        <section id="home" className="section relative h-[80vh]">
-            <div className="section-content section-center h-[80vh] flex-col">
+        <section id="home" className="section relative h-[85vh]">
+            <div className="section-content section-center h-[85vh] flex-col">
                 {/* Name */}
                 <div className="flex flex-col leading-[1.2] tracking-tight">
                     <span className="cursor-default text-lg opacity-75">
@@ -19,39 +20,48 @@ export function HeroV2() {
 
                 {/* Summary */}
                 <div className="max-w-prose text-center text-lg opacity-75">
-                    <p>I'm a 21 year old SWE from the USA who builds fun, tasteful web apps.</p>
+                    <p>I'm a 21 year old SWE from the USA.</p>
+                    <p>Automating workflows and building real-time web apps for business is what I do.</p>
                 </div>
 
                 {/* CTA */}
-                <div className="mt-4 flex gap-4">
-                    <button className="bg-accent text-md flex items-center gap-2 rounded-lg border border-blue-400 px-4 py-2 font-medium whitespace-nowrap">
-                        {/* <FolderClosed size={18} /> */}
-                        <Phone size={18} />
-                        Contact Me
-                    </button>
+                <div className="animated-white-outline mt-4 flex flex-col gap-4 rounded-lg border border-white/10 bg-black/10 p-6">
+                    <div className="flex items-center justify-between gap-4">
+                        <span>#Socials</span>
 
-                    <button className="btn-animated-outline text-md flex items-center gap-2 rounded-lg px-4 py-2 font-medium whitespace-nowrap">
-                        <FileText size={18} />
-                        Resume
-                    </button>
+                        <div className="flex items-center gap-4">
+                            <GithubSocialFLB />
+                            <LinkedinSocialFLB />
+                            <FiverrSocialFLB />
+                        </div>
+                    </div>
 
-                    {/* <button className="btn-animated-outline text-md flex items-center gap-2 rounded-lg px-4 py-2 font-medium whitespace-nowrap">
-                        <GitBranch size={18} />
-                        Github
-                    </button> */}
+                    {/* Buttons */}
+                    <div className="mt-4 flex gap-4">
+                        <Button asChild size="lg" variant="default">
+                            <a href="#contact" rel="noopener noreferrer" target="_blank">
+                                <Phone size={18} />
+                                Contact Me
+                            </a>
+                        </Button>
+
+                        <Button asChild size="lg" variant="outline">
+                            <a href="/resume" rel="noopener noreferrer" target="_blank">
+                                <FileText size={18} />
+                                Resume
+                            </a>
+                        </Button>
+                    </div>
                 </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="absolute bottom-18 left-1/2 flex -translate-x-1/2 items-center gap-4">
-                <GithubSocialFLB />
-                <LinkedinSocialFLB />
-                <FiverrSocialFLB />
             </div>
 
             {/* Swipe down indicator */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 animate-bounce opacity-75">
-                <ChevronDown className="size-8" />
+                <Button asChild size="icon" variant="link">
+                    <a href="#projects">
+                        <ChevronDown className="size-8" />
+                    </a>
+                </Button>
             </div>
         </section>
     );

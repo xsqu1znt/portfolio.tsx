@@ -90,16 +90,16 @@
 }
 
 /* - - - - - - - - - - - - - - - - - - */
-@property --btn-outline-gradient-deg {
+@property --white-outline-deg {
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: true;
 }
 
-.btn-animated-outline {
+.animated-white-outline {
     position: relative;
 }
-.btn-animated-outline::before {
+.animated-white-outline::before {
     content: "";
     position: absolute;
     z-index: 1;
@@ -108,17 +108,17 @@
     opacity: 0.35;
 
     border: 1px solid transparent;
-    background: linear-gradient(var(--btn-outline-gradient-deg), white, transparent) border-box;
+    background: linear-gradient(var(--white-outline-deg), white, transparent) border-box;
     mask:
         linear-gradient(black) border-box,
         linear-gradient(black) padding-box;
     mask-composite: subtract;
 
-    animation: btn-outline-gradient-spin 5s linear infinite;
+    animation: white-outline-spin 5s linear infinite;
 }
 
-@keyframes btn-outline-gradient-spin {
+@keyframes white-outline-spin {
     to {
-        --btn-outline-gradient-deg: 360deg;
+        --white-outline-deg: 360deg;
     }
 }

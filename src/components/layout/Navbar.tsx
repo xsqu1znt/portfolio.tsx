@@ -50,7 +50,7 @@ export function Navbar(props: Props) {
     return (
         <nav className="nav-h fixed top-0 z-[100] flex w-full items-center justify-between px-8 lg:px-16">
             <div className="flex items-center gap-4">
-                <a href="#home" className="cursor-pointer text-xl font-bold select-none">
+                <a href="#home" className="cursor-pointer text-2xl font-bold select-none">
                     GG
                 </a>
 

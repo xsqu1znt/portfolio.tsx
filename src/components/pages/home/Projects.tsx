@@ -1,12 +1,54 @@
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/Carousel";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/Tabs";
-import { ProjectCard } from "@/components/cards";
-import projects from "@/constants/projects";
+import { BubbleTag } from "@/components/ui";
+import { NoTouchPropagation } from "@/components/common";
 
 export function Projects() {
     return (
         <section id="projects" className="section">
             <div className="section-content section-center">
+                <div className="flex flex-col gap-4">
+                    {/* Placeholder Project 1 */}
+                    <div className="grid grid-cols-2 gap-4 rounded-lg border border-white/10 p-4">
+                        <div className="h-full w-full animate-pulse rounded-lg bg-white/5"></div>
+
+                        <div className="flex flex-col gap-2">
+                            <h2 className="text-xl">Adverb</h2>
+                            <p className="text-sm opacity-75">AI-powered copywriter tool</p>
+
+                            <NoTouchPropagation>
+                                <div className="no-scrollbar flex w-full touch-pan-x items-center gap-2 whitespace-nowrap not-lg:overflow-x-auto lg:flex-wrap">
+                                    <BubbleTag size={"sm"}>TypeScript</BubbleTag>
+                                    <BubbleTag size={"sm"}>Next.js</BubbleTag>
+                                    <BubbleTag size={"sm"}>TailwindCSS</BubbleTag>
+                                    <BubbleTag size={"sm"}>OpenAI</BubbleTag>
+                                    <BubbleTag size={"sm"}>Supabase</BubbleTag>
+                                    <BubbleTag size={"sm"}>Vercel</BubbleTag>
+                                </div>
+                            </NoTouchPropagation>
+                        </div>
+                    </div>
+
+                    {/* Placeholder Project 2 */}
+                    <div className="grid grid-cols-2 gap-4 rounded-lg border border-white/10 p-4">
+                        <div className="order-last h-full w-full animate-pulse rounded-lg bg-white/5"></div>
+
+                        <div className="flex flex-col gap-2">
+                            <h2 className="text-xl">Vinted Discord Bot</h2>
+                            <p className="text-sm opacity-75">Real-time listing notifications and more</p>
+
+                            <NoTouchPropagation>
+                                <div className="no-scrollbar flex w-full touch-pan-x items-center gap-2 whitespace-nowrap not-lg:overflow-x-auto lg:flex-wrap">
+                                    <BubbleTag size={"sm"}>TypeScript</BubbleTag>
+                                    <BubbleTag size={"sm"}>Express</BubbleTag>
+                                    <BubbleTag size={"sm"}>Playwright</BubbleTag>
+                                    <BubbleTag size={"sm"}>Discord.js</BubbleTag>
+                                    <BubbleTag size={"sm"}>MongoDB</BubbleTag>
+                                    <BubbleTag size={"sm"}>Render</BubbleTag>
+                                </div>
+                            </NoTouchPropagation>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Section header */}
                 {/* <div className="flex flex-col leading-[1.2] tracking-tight">
                     <h2 className="mt-2 text-4xl font-bold">🏆 Top Projects</h2>
